@@ -2,6 +2,9 @@
   "name": "nfov",
   "version": "0.0.0",
   "description": "Simple nfo viewer",
+  "os": [
+    "darwin"
+  ],
   "main": "main.js",
   "scripts": {
     "start": "electron main.js"

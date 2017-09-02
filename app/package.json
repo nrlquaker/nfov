@@ -1,0 +1,26 @@
+{
+  "name": "nfov",
+  "version": "0.0.0",
+  "description": "Simple nfo viewer",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nrlquaker/nfov.git"
+  },
+  "keywords": [
+    "nfo",
+    "electron"
+  ],
+  "author": "nrlquaker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nrlquaker/nfov/issues"
+  },
+  "homepage": "https://github.com/nrlquaker/nfov#readme",
+  "dependencies": {
+    "electron": "^1.7.5"
+  }
+}

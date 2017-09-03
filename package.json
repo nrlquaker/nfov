@@ -1,0 +1,77 @@
+{
+    "name": "nfov",
+    "productName": "nfov",
+    "version": "0.0.0",
+    "description": "Simple nfo viewer",
+    "os": [
+        "darwin"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nrlquaker/nfov.git"
+    },
+    "main": "src/index.ts",
+    "scripts": {
+        "start": "electron-forge start",
+        "package": "electron-forge package",
+        "make": "electron-forge make",
+        "publish": "electron-forge publish",
+        "lint": "tslint --project tsconfig.json --type-check --force"
+    },
+    "keywords": [
+        "nfo",
+        "electron"
+    ],
+    "author": "nrlquaker",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/nrlquaker/nfov/issues"
+    },
+    "homepage": "https://github.com/nrlquaker/nfov",
+    "config": {
+        "forge": {
+            "make_targets": {
+                "darwin": [
+                    "zip"
+                ]
+            },
+            "electronPackagerConfig": {
+                "packageManager": "npm"
+            },
+            "electronWinstallerConfig": {
+                "name": "nfov"
+            },
+            "electronInstallerDebian": {},
+            "electronInstallerRedhat": {},
+            "github_repository": {
+                "owner": "nrlquaker",
+                "name": "https://github.com/nrlquaker/nfov"
+            },
+            "windowsStoreConfig": {
+                "packageName": "",
+                "name": "nfov"
+            }
+        }
+    },
+    "dependencies": {
+        "@types/electron": "^1.6.10",
+        "@types/electron-devtools-installer": "^2.0.2",
+        "@types/react": "^0.14.57",
+        "@types/react-dom": "^0.14.23",
+        "electron-compile": "^6.4.1",
+        "electron-devtools-installer": "^2.2.0",
+        "react": "^15.6.1",
+        "react-dom": "^15.6.1",
+        "react-hot-loader": "^3.0.0-beta.7",
+        "tslib": "^1.7.1"
+    },
+    "devDependencies": {
+        "babel-plugin-transform-async-to-generator": "^6.24.1",
+        "babel-preset-env": "^1.6.0",
+        "babel-preset-react": "^6.24.1",
+        "electron-forge": "^4.0.0",
+        "electron-prebuilt-compile": "1.7.5",
+        "tslint": "^5.7.0",
+        "typescript": "^2.2.2"
+    }
+}

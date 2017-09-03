@@ -1,0 +1,24 @@
+{
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "editor.rulers": [
+        80
+    ],
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.insertSpaces": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "node_modules": true,
+        "package-lock.json": true
+    },
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000
+}

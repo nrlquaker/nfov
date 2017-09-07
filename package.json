@@ -38,17 +38,8 @@
             "electronPackagerConfig": {
                 "packageManager": "npm"
             },
-            "electronWinstallerConfig": {
-                "name": "nfov"
-            },
-            "electronInstallerDebian": {},
-            "electronInstallerRedhat": {},
             "github_repository": {
                 "owner": "nrlquaker",
-                "name": "https://github.com/nrlquaker/nfov"
-            },
-            "windowsStoreConfig": {
-                "packageName": "",
                 "name": "nfov"
             }
         }

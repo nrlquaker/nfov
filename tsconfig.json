@@ -1,27 +1,33 @@
 {
     "compilerOptions": {
-        "strict": true,
-        "removeComments": false,
-        "preserveConstEnums": true,
-        "sourceMap": true,
+        "target": "es2015",
+        "module": "commonjs",
+        "jsx": "react",
         "declaration": true,
-        "noImplicitAny": true,
-        "noImplicitReturns": true,
-        "suppressImplicitAnyIndexErrors": true,
-        "strictNullChecks": true,
-        "noUnusedLocals": true,
-        "noImplicitThis": true,
-        "noUnusedParameters": true,
+        "sourceMap": true,
+        "outDir": "gen",
+        "rootDir": "src",
+        "removeComments": false,
         "importHelpers": true,
         "noEmitHelpers": true,
-        "module": "commonjs",
+        "strict": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "preserveConstEnums": true,
         "moduleResolution": "node",
-        "pretty": true,
-        "target": "es2015",
-        "jsx": "react"
+        "pretty": true
     },
     "formatCodeOptions": {
         "indentSize": 2,
         "tabSize": 2
-    }
+    },
+    "exclude": [
+        "node_modules",
+        "out",
+        "gen",
+        ".vscode"
+    ]
 }

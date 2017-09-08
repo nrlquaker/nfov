@@ -20,5 +20,10 @@
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 1000
+    "files.autoSaveDelay": 1000,
+    "prettier.printWidth": 95,
+    "prettier.tabWidth": 4,
+    "prettier.singleQuote": true,
+    "prettier.trailingComma": "es5",
+    "prettier.semi": false
 }

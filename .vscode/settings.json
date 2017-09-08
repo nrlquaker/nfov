@@ -24,6 +24,6 @@
     "prettier.printWidth": 95,
     "prettier.tabWidth": 4,
     "prettier.singleQuote": true,
-    "prettier.trailingComma": "es5",
+    "prettier.trailingComma": "none",
     "prettier.semi": false
 }

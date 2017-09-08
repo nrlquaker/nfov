@@ -3,6 +3,7 @@
     "rules": {
         "object-literal-sort-keys": false,
         "no-use-before-declare": true,
+        "trailing-comma": false,
         "quotemark": [
             true,
             "single",

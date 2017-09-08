@@ -1,6 +1,7 @@
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, Menu } from 'electron'
 import { enableLiveReload } from 'electron-compile'
 import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer'
+import { buildMenu } from './menu/build-menu'
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -27,6 +28,8 @@ const createWindow = async () => {
         await installExtension(REACT_DEVELOPER_TOOLS)
         mainWindow.webContents.openDevTools()
     }
+
+    Menu.setApplicationMenu(buildMenu())
 
     // Emitted when the window is closed.
     mainWindow.on('closed', () => {

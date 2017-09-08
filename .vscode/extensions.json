@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "DavidAnson.vscode-markdownlint",
+        "eg2.tslint",
+        "liuwei.ts-compile-on-save",
+        "msjsdiag.debugger-for-chrome"
+    ]
+}

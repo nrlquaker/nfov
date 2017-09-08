@@ -2,6 +2,7 @@
     "recommendations": [
         "DavidAnson.vscode-markdownlint",
         "eg2.tslint",
+        "esbenp.prettier-vscode",
         "liuwei.ts-compile-on-save",
         "msjsdiag.debugger-for-chrome"
     ]

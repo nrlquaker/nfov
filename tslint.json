@@ -1,6 +1,10 @@
 {
     "extends": "tslint:recommended",
     "rules": {
+        "curly": [
+            true,
+            "ignore-same-line"
+        ],
         "object-literal-sort-keys": false,
         "no-use-before-declare": true,
         "trailing-comma": false,
@@ -17,6 +21,10 @@
             true,
             95
         ],
-        "no-require-imports": true
+        "no-require-imports": true,
+        "interface-name": [
+            true,
+            "never-prefix"
+        ]
     }
 }

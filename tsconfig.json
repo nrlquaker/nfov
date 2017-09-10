@@ -2,7 +2,6 @@
     "compilerOptions": {
         "target": "es2015",
         "module": "commonjs",
-        "jsx": "react",
         "declaration": true,
         "sourceMap": true,
         "outDir": "gen",
@@ -25,6 +24,7 @@
         "tabSize": 2
     },
     "exclude": [
+        "assets",
         "node_modules",
         "out",
         "gen",

@@ -1,7 +1,8 @@
 import { app, Menu } from 'electron'
+import { openFile } from './menu-clicks'
 
 export function buildMenu(): Electron.Menu {
-    const template = [
+    const template: Electron.MenuItemConstructorOptions[] = [
         {
             label: app.getName(),
             submenu: [
@@ -18,7 +19,7 @@ export function buildMenu(): Electron.Menu {
         },
         {
             label: 'File',
-            submenu: [{ label: 'Open...', accelerator: 'Cmd+O', click: click() }]
+            submenu: [{ label: 'Open...', accelerator: 'Cmd+O', click: openFile() }]
         },
         {
             label: 'Edit',
@@ -40,8 +41,4 @@ export function buildMenu(): Electron.Menu {
         }
     ]
     return Menu.buildFromTemplate(template)
-}
-
-function click(): void {
-    // TODO: handle click
 }

@@ -4,22 +4,8 @@ import { openFile } from './menu-clicks'
 export function buildMenu(): Electron.Menu {
     const template: Electron.MenuItemConstructorOptions[] = [
         {
-            label: app.getName(),
-            submenu: [
-                { role: 'about' },
-                { type: 'separator' },
-                { role: 'services', submenu: [] },
-                { type: 'separator' },
-                { role: 'hide' },
-                { role: 'hideothers' },
-                { role: 'unhide' },
-                { type: 'separator' },
-                { role: 'quit' }
-            ]
-        },
-        {
             label: 'File',
-            submenu: [{ label: 'Open...', accelerator: 'Cmd+O', click: openFile() }]
+            submenu: [{ label: 'Open...', accelerator: 'CmdOrCtrl+O', click: openFile() }]
         },
         {
             label: 'Edit',
@@ -40,5 +26,22 @@ export function buildMenu(): Electron.Menu {
             submenu: []
         }
     ]
+
+    if (process.platform === 'darwin') {
+            template.unshift({
+                label: app.getName(),
+                submenu: [
+                    { role: 'about' },
+                    { type: 'separator' },
+                    { role: 'services', submenu: [] },
+                    { type: 'separator' },
+                    { role: 'hide' },
+                    { role: 'hideothers' },
+                    { role: 'unhide' },
+                    { type: 'separator' },
+                    { role: 'quit' }
+                ]
+            },
+        },
     return Menu.buildFromTemplate(template)
 }

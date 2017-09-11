@@ -4,7 +4,8 @@
     "version": "0.0.0",
     "description": "Simple nfo viewer",
     "os": [
-        "darwin"
+        "darwin",
+        "win32"
     ],
     "repository": {
         "type": "git",
@@ -33,11 +34,21 @@
             "make_targets": {
                 "darwin": [
                     "zip"
+                ],
+                "win32": [
+                    "squirrel"
                 ]
             },
             "electronPackagerConfig": {
                 "packageManager": "npm",
                 "icon": "assets/icon.icns"
+            },
+            "electronWinstallerConfig": {
+                "name": "nfov"
+            },
+            "windowsStoreConfig": {
+                 "packageName": "",
+                 "name": "nfov"
             },
             "github_repository": {
                 "owner": "nrlquaker",

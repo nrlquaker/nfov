@@ -1,8 +1,10 @@
-import { dialog } from 'electron'
+import { dialog, Menu } from 'electron'
+import { Contract } from '../../processes-contract'
 import { ClickHandler } from './click-handler'
 
 export function openFile(): ClickHandler {
     return (_, browserWindow) => {
+        setCloseDocumentEnable(true)
         dialog.showOpenDialog(
             browserWindow,
             {
@@ -11,8 +13,20 @@ export function openFile(): ClickHandler {
             },
             (filePaths: string[]) => {
                 if (filePaths === undefined) return
-                browserWindow.webContents.send('open-file', filePaths[0])
+                browserWindow.webContents.send(Contract.OPEN_FILE, filePaths[0])
             }
         )
     }
+}
+
+export function closeFile(): ClickHandler {
+    return (_, browserWindow) => {
+        setCloseDocumentEnable(false)
+        browserWindow.webContents.send(Contract.CLOSE_FILE)
+    }
+}
+
+function setCloseDocumentEnable(enable: boolean) {
+    const menu = Menu.getApplicationMenu()
+    menu.items[1].submenu!.items[1].enabled = enable
 }

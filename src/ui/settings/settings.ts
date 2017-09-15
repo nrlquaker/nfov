@@ -1,12 +1,15 @@
-export function setViewerColors(textColor: string, backgroundColor: string) {
-    const container = document.getElementById('app-container')
-    const body = document.getElementById('body')
+const body = document.getElementById('body')
+const container = document.getElementById('app-container')
+
+export function setTextColor(textColor: string) {
     container!.style.color = textColor
-    container!.style.backgroundColor = backgroundColor
+}
+
+export function setBgColor(backgroundColor: string) {
     body!.style.backgroundColor = backgroundColor
+    container!.style.backgroundColor = backgroundColor
 }
 
 export function setViewerFont(fontName: string) {
-    const container = document.getElementById('app-container')
     container!.style.fontFamily = fontName
 }

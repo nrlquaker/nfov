@@ -1,4 +1,5 @@
-import { setViewerColors, setViewerFont} from './settings'
+import { setBgColor, setTextColor, setViewerFont} from './settings'
 
-setViewerColors('#FFFFFF', '#000000')
+setTextColor('#FFFFFF')
+setBgColor('#000000')
 setViewerFont('ProFontWindows')

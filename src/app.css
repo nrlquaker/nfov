@@ -8,6 +8,6 @@ html, body {
 }
 
 pre {
-  width: 100%;
+  padding: 1em;
   font-size: 0.8em;
 }

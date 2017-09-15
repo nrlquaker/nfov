@@ -8,7 +8,7 @@ import './ui/settings/default-settings'
 import './ui/settings/window-settings'
 
 ipcRenderer.on(Contract.OPEN_FILE, (_: any, filePath: string) => {
-    setTitle(basename(filePath))
+    setTitle(`${basename(filePath)} - ${remote.app.getName()}`)
     setText(loadFile(filePath))
 })
 

@@ -25,10 +25,11 @@
         "tabSize": 2
     },
     "exclude": [
+        ".vscode",
         "assets",
+        "gen",
         "node_modules",
         "out",
-        "gen",
-        ".vscode"
+        "screenshots"
     ]
 }

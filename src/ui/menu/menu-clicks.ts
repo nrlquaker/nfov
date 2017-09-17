@@ -1,4 +1,4 @@
-import { dialog, ipcMain, Menu } from 'electron'
+import { dialog, ipcMain, Menu, shell } from 'electron'
 import { ClickHandler } from './click-handler'
 
 export function openFile(): ClickHandler {
@@ -28,6 +28,18 @@ export function closeFile(): ClickHandler {
 export function openPreferences(): ClickHandler {
     return (_, browserWindow) => {
         emit(browserWindow, 'open-preferences')
+    }
+}
+
+export function openHomepage(): ClickHandler {
+    return () => {
+        shell.openExternal('https://github.com/nrlquaker/nfov')
+    }
+}
+
+export function reportIssue(): ClickHandler {
+    return () => {
+        shell.openExternal('https://github.com/nrlquaker/nfov/issues/new')
     }
 }
 

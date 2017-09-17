@@ -37,7 +37,8 @@
             },
             "electronPackagerConfig": {
                 "packageManager": "npm",
-                "icon": "assets/icons/icon.icns"
+                "icon": "assets/icons/icon.icns",
+                "appCategoryType": "public.app-category.utilities"
             },
             "github_repository": {
                 "owner": "nrlquaker",

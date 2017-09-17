@@ -56,12 +56,12 @@ app.on('ready', () => {
 })
 app.on('window-all-closed', () => app.quit())
 
-ipcMain.on('bg-color-changed', (_: any, message: string) => {
-    mainWindow!.webContents.send('bg-color-changed', message)
+ipcMain.on('bg-color-changed', (_: any, color: string) => {
+    mainWindow!.webContents.send('bg-color-changed', color)
 })
 
-ipcMain.on('text-color-changed', (_: any, message: string) => {
-    mainWindow!.webContents.send('text-color-changed', message)
+ipcMain.on('text-color-changed', (_: any, color: string) => {
+    mainWindow!.webContents.send('text-color-changed', color)
 })
 
 ipcMain.on('open-file', (_: any, filePath: string) => {

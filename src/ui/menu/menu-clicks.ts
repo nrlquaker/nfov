@@ -1,5 +1,4 @@
-import { dialog, Menu } from 'electron'
-import { Contract } from '../../processes-contract'
+import { dialog, ipcMain, Menu } from 'electron'
 import { ClickHandler } from './click-handler'
 
 export function openFile(): ClickHandler {
@@ -12,8 +11,8 @@ export function openFile(): ClickHandler {
                 properties: ['openFile']
             },
             (filePaths: string[]) => {
-                if (filePaths === undefined) return
-                browserWindow.webContents.send(Contract.OPEN_FILE, filePaths[0])
+                if (!filePaths) return
+                emit(browserWindow, 'open-file', filePaths[0])
             }
         )
     }
@@ -22,7 +21,21 @@ export function openFile(): ClickHandler {
 export function closeFile(): ClickHandler {
     return (_, browserWindow) => {
         setCloseDocumentEnable(false)
-        browserWindow.webContents.send(Contract.CLOSE_FILE)
+        emit(browserWindow, 'close-file')
+    }
+}
+
+export function openPreferences(): ClickHandler {
+    return (_, browserWindow) => {
+        emit(browserWindow, 'open-preferences')
+    }
+}
+
+function emit(window: Electron.BrowserWindow, channel: string, arg?: string) {
+    if (window) {
+        window.webContents.send(channel, arg)
+    } else {
+        ipcMain.emit(channel, '', arg)
     }
 }
 

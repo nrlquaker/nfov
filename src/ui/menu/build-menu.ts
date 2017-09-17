@@ -1,5 +1,5 @@
 import { app, Menu } from 'electron'
-import { closeFile, openFile, openPreferences } from './menu-clicks'
+import { closeFile, openFile, openHomepage, openPreferences, reportIssue } from './menu-clicks'
 
 export function buildMenu(): Electron.Menu {
     const template: Electron.MenuItemConstructorOptions[] = [
@@ -46,7 +46,10 @@ export function buildMenu(): Electron.Menu {
         },
         {
             role: 'help',
-            submenu: []
+            submenu: [
+                { label: 'Open homepage...', click: openHomepage() },
+                { label: 'Repor issue...', click: reportIssue() }
+            ]
         }
     ]
     return Menu.buildFromTemplate(template)

@@ -3,7 +3,6 @@ import { ClickHandler } from './click-handler'
 
 export function openFile(): ClickHandler {
     return (_, browserWindow) => {
-        setCloseDocumentEnable(true)
         dialog.showOpenDialog(
             browserWindow,
             {
@@ -12,6 +11,7 @@ export function openFile(): ClickHandler {
             },
             (filePaths: string[]) => {
                 if (!filePaths) return
+                setCloseDocumentEnable(true)
                 emit(browserWindow, 'open-file', filePaths[0])
             }
         )

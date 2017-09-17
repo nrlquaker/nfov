@@ -49,12 +49,14 @@
     "dependencies": {
         "anchorme": "^1.1.2",
         "electron-compile": "^6.4.1",
+        "electron-json-storage": "^3.1.0",
         "fs": "0.0.1-security",
         "iconv-lite": "^0.4.19",
         "path": "^0.12.7",
         "tslib": "^1.7.1"
     },
     "devDependencies": {
+        "@types/electron-json-storage": "0.0.21",
         "electron-forge": "^4.0.2",
         "electron-prebuilt-compile": "1.7.5",
         "prettier": "^1.6.1",

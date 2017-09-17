@@ -1,4 +1,5 @@
-import { ipcRenderer, remote } from 'electron'
+import anchorme from 'anchorme'
+import { ipcRenderer, remote, shell } from 'electron'
 import { basename } from 'path'
 import { loadFile } from './fs/load-file'
 import { setText, setTitle } from './ui/document/document'
@@ -12,7 +13,8 @@ const container = document.getElementById('app-container')
 ipcRenderer.on('open-file', (_: any, filePath: string) => {
     setTitle(`${basename(filePath)} - ${remote.app.getName()}`)
     container!.scrollIntoView()
-    setText(loadFile(filePath))
+    setText(anchorme(loadFile(filePath)))
+    openLinksInExternalBrowser()
 })
 
 ipcRenderer.on('close-file', () => {
@@ -31,3 +33,16 @@ ipcRenderer.on('bg-color-changed', (_: any, msg: string) => {
 ipcRenderer.on('text-color-changed', (_: any, msg: string) => {
     setTextColor(msg)
 })
+
+function openLinksInExternalBrowser() {
+    const links = document.querySelectorAll('a[href]')
+    Array.prototype.forEach.call(links, (link: Element) => {
+        const url = link.getAttribute('href')
+        if (url!.indexOf('http') === 0) {
+            link.addEventListener('click', (e) => {
+                e.preventDefault()
+                shell.openExternal(url)
+            })
+        }
+    })
+}

@@ -1,4 +1,4 @@
-// TODO: check missing symbols: https://cs.stanford.edu/people/miles/iso8859.html
+// https://cs.stanford.edu/people/miles/iso8859.html
 export const ISO_UTF_MAP = new Map<string, string>([
     ['Ú', '┌'],
     ['Ú', '┌'],
@@ -9,6 +9,7 @@ export const ISO_UTF_MAP = new Map<string, string>([
     ['Ù', '┘'],
     ['Ã', '├'],
     ['´', '┤'],
+    ['·', '╖'],
     ['ú', '·'],
     ['Û', '█'],
     ['Ü', '▄'],
@@ -27,5 +28,25 @@ export const ISO_UTF_MAP = new Map<string, string>([
     ['ø', '°'],
     ['Ò', '╥'],
     ['Í', '═'],
-    ['ª', '¬']
+    ['ª', '¬'],
+    ['ð', '≡'],
+    ['Ø', '╪'],
+    ['º', '║'],
+    ['Ë', '╦'],
+    ['õ', '⌡'],
+    ['Å', '┼'],
+    ['÷', '≈'],
+    ['¦', 'ª'],
+    ['¯', '»'],
+    ['Ö', '╓'],
+    ['Ç', '╟'],
+    ['Ó', '╙'],
+    ['ô', '⌠'],
+
+    ['¶', '╢'],
+    ['½', '╜'],
+    ['ì', '∞'],
+    ['‘', 'æ'],
+    ['\u000E', '♫'], // ^N
+    ['¼', '╝']
 ])

@@ -3,7 +3,8 @@ import { decode } from 'iconv-lite'
 import { mapIsoToUtf } from './encoding/iso-to-utf-mapper'
 
 export function loadFile(filePath: string): string {
-    const content = readFileSync(filePath)
-    const data = decode(content, 'iso-8859-1')
-    return mapIsoToUtf(data)
+    const fileContent = readFileSync(filePath)
+    const data = decode(fileContent, 'win1252')
+    const properData = mapIsoToUtf(data)
+    return properData.replaceAll('<', '&lt') // escape tags
 }

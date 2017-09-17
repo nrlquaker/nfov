@@ -7,8 +7,11 @@ import './ui/drag-n-drop/drag-n-drop'
 import './ui/settings/default-settings'
 import './ui/settings/window-settings'
 
+const cont = document.getElementById('app-container')
+
 ipcRenderer.on(Contract.OPEN_FILE, (_: any, filePath: string) => {
     setTitle(`${basename(filePath)} - ${remote.app.getName()}`)
+    cont!.scrollIntoView()
     setText(loadFile(filePath))
 })
 

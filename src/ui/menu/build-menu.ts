@@ -1,5 +1,5 @@
 import { app, Menu } from 'electron'
-import { closeFile, openFile } from './menu-clicks'
+import { closeFile, openFile, openPreferences } from './menu-clicks'
 
 export function buildMenu(): Electron.Menu {
     const template: Electron.MenuItemConstructorOptions[] = [
@@ -7,6 +7,8 @@ export function buildMenu(): Electron.Menu {
             label: app.getName(),
             submenu: [
                 { role: 'about' },
+                { type: 'separator' },
+                { label: 'Preferences', accelerator: 'Cmd+,', click: openPreferences() },
                 { type: 'separator' },
                 { role: 'services', submenu: [] },
                 { type: 'separator' },
@@ -37,6 +39,10 @@ export function buildMenu(): Electron.Menu {
                 { role: 'delete' },
                 { role: 'selectall' }
             ]
+        },
+        {
+            role: 'window',
+            submenu: [{ role: 'minimize' }, { role: 'close' }]
         },
         {
             role: 'help',

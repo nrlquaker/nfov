@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="../../../assets/css/photon.css">
+  <link rel="stylesheet" href="preferences.css">
+  <script src="../../../assets/js/jscolor.js"></script>
+</head>
+
+<body>
+  <div class="window">
+    <header class="toolbar toolbar-header draggable">
+      <h1 class="title">Preferences</h1>
+    </header>
+    <div class="window-content">
+      <div class="padded-more">
+        <form>
+          <label for="font">Font:</label>
+          <select name="font" class="form-control">
+            <option>Terminus (TTF)</option>
+          </select>
+          <br/><br/>
+          <div class="cp">Text color: <input class="jscolor {onFineChange:'updateTextColor(this)'}" value="FFFFFF"></div><br/>
+          <div class="cp">Background color: <input class="jscolor {onFineChange:'updateBgColor(this)'}" value="000000"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  window.exports = module.exports
+
+</script>
+<script src="preferences.ts" />
+
+</html>

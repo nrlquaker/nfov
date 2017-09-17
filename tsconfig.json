@@ -2,6 +2,7 @@
     "compilerOptions": {
         "target": "es2015",
         "module": "commonjs",
+        "allowJs": true,
         "declaration": true,
         "sourceMap": true,
         "outDir": "gen",

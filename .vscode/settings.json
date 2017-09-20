@@ -15,7 +15,9 @@
         "**/.hg": true,
         "**/.DS_Store": true,
         "node_modules": true,
-        "package-lock.json": true
+        "package-lock.json": true,
+        "gen": true,
+        "out": true
     },
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,

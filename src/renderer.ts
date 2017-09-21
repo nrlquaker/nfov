@@ -4,7 +4,7 @@ import { basename } from 'path'
 import { loadFile } from './fs/load-file'
 import { setText, setTitle } from './ui/document/document'
 import './ui/drag-n-drop/drag-n-drop'
-import { setBgColor, setTextColor } from './ui/preferences/user-preferences'
+import * as userPreferences from './ui/preferences/user-preferences'
 import './ui/settings/window-settings'
 
 const container = document.getElementById('app-container')
@@ -26,11 +26,19 @@ ipcRenderer.on('open-preferences', () => {
 })
 
 ipcRenderer.on('bg-color-changed', (_: any, color: string) => {
-    setBgColor(color)
+    userPreferences.setBgColor(color)
 })
 
 ipcRenderer.on('text-color-changed', (_: any, color: string) => {
-    setTextColor(color)
+    userPreferences.setTextColor(color)
+})
+
+ipcRenderer.on('font-changed', (_: any, fontName: string) => {
+    userPreferences.setFont(fontName)
+})
+
+ipcRenderer.on('font-size-changed', (_: any, fontSize: string) => {
+    userPreferences.setFontSize(fontSize)
 })
 
 function openLinksInExternalBrowser() {

@@ -1,7 +1,6 @@
 import { ipcRenderer } from 'electron'
 import '../settings/window-settings'
 import * as storage from './storage'
-import { setViewerFont } from './user-preferences'
 
 document.addEventListener('DOMContentLoaded', () => {
     const textCp = document.getElementById('cp_text') as HTMLInputElement
@@ -16,7 +15,27 @@ document.addEventListener('DOMContentLoaded', () => {
         ipcRenderer.send('bg-color-changed', color)
     })
 
-    setViewerFont('Terminus (TTF)')
+    const fontSelector = document.getElementById('font_selector') as HTMLSelectElement
+    storage.getFontName((fontName: string) => {
+        fontSelector.value = fontName
+        ipcRenderer.send('font-changed', fontName)
+    })
+
+    fontSelector.addEventListener('change', () => {
+        storage.setFontName(fontSelector.value)
+        ipcRenderer.send('font-changed', fontSelector.value)
+    })
+
+    const fontSizeSelector = document.getElementById('font_size_selector') as HTMLSelectElement
+    storage.getFontSize((fontSize: string) => {
+        fontSizeSelector.value = fontSize
+        ipcRenderer.send('font-size-changed', fontSize)
+    })
+
+    fontSizeSelector.addEventListener('change', () => {
+        storage.setFontSize(fontSizeSelector.value)
+        ipcRenderer.send('font-size-changed', fontSizeSelector.value)
+    })
 })
 
 function updateTextColor(jscolor: string) {

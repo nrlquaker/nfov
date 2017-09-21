@@ -10,9 +10,143 @@ html, body {
 
 pre {
   padding: 1em;
-  font-size: 0.8em;
 }
 
 a {
     color: #01FF70;
+}
+
+@font-face {
+font-family: 'BlockZone';
+src: url('../assets/fonts/BlockZone.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'ProFontWindows';
+src: url('../assets/fonts/ProFontWindows.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 AmstradPC1512-2y';
+src: url('../assets/fonts/Px437_AmstradPC1512-2y.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 ATI 8x8-2y';
+src: url('../assets/fonts/Px437_ATI_8x8-2y.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 ATI 8x14';
+src: url('../assets/fonts/Px437_ATI_8x14.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 ATI 8x16';
+src: url('../assets/fonts/Px437_ATI_8x16.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 CompaqThin 8x16';
+src: url('../assets/fonts/Px437_CompaqThin_8x16.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 IBM BIOS-2y';
+src: url('../assets/fonts/Px437_IBM_BIOS-2y.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 IBM CGAthin-2y';
+src: url('../assets/fonts/Px437_IBM_CGAthin-2y.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 IBM Conv-2y';
+src: url('../assets/fonts/Px437_IBM_Conv-2y.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 IBM ISO8';
+src: url('../assets/fonts/Px437_IBM_ISO8.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 IBM MDA';
+src: url('../assets/fonts/Px437_IBM_MDA.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 IBM PS/2thin1';
+src: url('../assets/fonts/Px437_IBM_PS2thin1.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 IBM PS/2thin2';
+src: url('../assets/fonts/Px437_IBM_PS2thin2.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 IBM PS/2thin3';
+src: url('../assets/fonts/Px437_IBM_PS2thin3.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 IBM PS/2thin4';
+src: url('../assets/fonts/Px437_IBM_PS2thin4.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 IBM VGA8';
+src: url('../assets/fonts/Px437_IBM_VGA8.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 IBM VGA9';
+src: url('../assets/fonts/Px437_IBM_VGA9.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 TandyNew TV-2y';
+src: url('../assets/fonts/Px437_TandyNew_TV-2y.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 TandyOld TV-2y';
+src: url('../assets/fonts/Px437_TandyOld_TV-2y.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 Verite 8x8-2y';
+src: url('../assets/fonts/Px437_Verite_8x8-2y.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 Verite 8x16';
+src: url('../assets/fonts/Px437_Verite_8x16.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 VGA SquarePx';
+src: url('../assets/fonts/Px437_VGA_SquarePx.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 Wyse700a-2y';
+src: url('../assets/fonts/Px437_Wyse700a-2y.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'Px437 Wyse700b-2y';
+src: url('../assets/fonts/Px437_Wyse700b-2y.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'PxPlus IBM CGAthin-2y';
+src: url('../assets/fonts/PxPlus_IBM_CGAthin-2y.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'PT Mono';
+src: url('../assets/fonts/PTMono.ttf') format('truetype')
 }

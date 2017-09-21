@@ -1,4 +1,5 @@
 import * as storage from 'electron-json-storage'
+import { DefaultSettings } from './default-settings'
 
 export function setBgColor(bgColor: string): void {
     storage.set('bgcolor', bgColor, empty)
@@ -7,9 +8,9 @@ export function setBgColor(bgColor: string): void {
 export function getBgColor(callback: (bgColor: string) => void): void {
     storage.has('bgcolor', (_, hasKey) => {
         if (!hasKey) {
-            callback('#000000')
+            callback(DefaultSettings.getBgColor())
         } else {
-            storage.get('bgcolor', (_, data: string) => callback(data))
+            storage.get('bgcolor', (__, data: string) => callback(data))
         }
     })
 }
@@ -21,9 +22,37 @@ export function setTextColor(textColor: string): void {
 export function getTextColor(callback: (textColor: string) => void): void {
     storage.has('textcolor', (_, hasKey) => {
         if (!hasKey) {
-            callback('#FFFFFF')
+            callback(DefaultSettings.getTextColor())
         } else {
-            storage.get('textcolor', (_, data: string) => callback(data))
+            storage.get('textcolor', (__, data: string) => callback(data))
+        }
+    })
+}
+
+export function setFontName(fontName: string): void {
+    storage.set('fontName', fontName, empty)
+}
+
+export function getFontName(callback: (fontName: string) => void): void {
+    storage.has('fontName', (_, hasKey) => {
+        if (!hasKey) {
+            callback(DefaultSettings.getFontName())
+        } else {
+            storage.get('fontName', (__, data: string) => callback(data))
+        }
+    })
+}
+
+export function setFontSize(fontSize: string): void {
+    storage.set('fontSize', fontSize, empty)
+}
+
+export function getFontSize(callback: (fontSize: string) => void): void {
+    storage.has('fontSize', (_, hasKey) => {
+        if (!hasKey) {
+            callback(DefaultSettings.getFontSize())
+        } else {
+            storage.get('fontSize', (__, data: string) => callback(data))
         }
     })
 }

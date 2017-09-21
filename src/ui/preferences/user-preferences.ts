@@ -10,6 +10,10 @@ export function setBgColor(backgroundColor: string) {
     container!.style.backgroundColor = backgroundColor
 }
 
-export function setViewerFont(fontName: string) {
-    container!.style.fontFamily = fontName
+export function setFont(fontName: string) {
+    container!.style.fontFamily = `"${fontName}"`
+}
+
+export function setFontSize(fontSize: string) {
+    container!.style.fontSize = `${fontSize}px`
 }

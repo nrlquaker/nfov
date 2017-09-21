@@ -27,7 +27,7 @@ function createMainWindow() {
 function createPreferencesWindow() {
     preferencesWindow = new BrowserWindow({
         width: 370,
-        height: 300,
+        height: 220,
         frame: false,
         show: false,
         titleBarStyle: 'hidden',
@@ -62,6 +62,14 @@ ipcMain.on('bg-color-changed', (_: any, color: string) => {
 
 ipcMain.on('text-color-changed', (_: any, color: string) => {
     mainWindow!.webContents.send('text-color-changed', color)
+})
+
+ipcMain.on('font-changed', (_: any, fontName: string) => {
+    mainWindow!.webContents.send('font-changed', fontName)
+})
+
+ipcMain.on('font-size-changed', (_: any, fontSize: string) => {
+    mainWindow!.webContents.send('font-size-changed', fontSize)
 })
 
 ipcMain.on('open-file', (_: any, filePath: string) => {

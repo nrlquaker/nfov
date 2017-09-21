@@ -1,9 +1,13 @@
 .cp input {
    border: none;
    line-height: 3px;
-   width: 70px
+   width: 70px;
+}
+
+select {
+    margin: 0 0 10px 0;
 }
 
 .window {
-    background-color: #ECECEC
+    background-color: #ECECEC;
 }

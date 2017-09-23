@@ -148,5 +148,5 @@ src: url('../assets/fonts/PxPlus_IBM_CGAthin-2y.ttf') format('truetype')
 
 @font-face {
 font-family: 'PT Mono';
-src: url('../assets/fonts/PTMono.ttf') format('truetype')
+src: url('../assets/fonts/PTMono.ttc') format('truetype')
 }

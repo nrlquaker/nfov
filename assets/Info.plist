@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>CFBundleDocumentTypes</key>
+		<array>
+			<dict>
+				<key>CFBundleTypeExtensions</key>
+				<array>
+					<string>nfo</string>
+					<string>NFO</string>
+				</array>
+				<key>CFBundleTypeIconFile</key>
+				<string>file_nfo.icns</string>
+				<key>CFBundleTypeName</key>
+				<string>ASCII Release Information</string>
+				<key>CFBundleTypeRole</key>
+				<string>Viewer</string>
+				<key>LSHandlerRank</key>
+				<string>Default</string>
+			</dict>
+			<dict>
+				<key>CFBundleTypeExtensions</key>
+				<array>
+					<string>diz</string>
+					<string>DIZ</string>
+				</array>
+				<key>CFBundleTypeIconFile</key>
+				<string>file_diz.icns</string>
+				<key>CFBundleTypeName</key>
+				<string>Description in Zipfile</string>
+				<key>CFBundleTypeRole</key>
+				<string>Viewer</string>
+				<key>LSHandlerRank</key>
+				<string>Default</string>
+			</dict>
+		</array>
+	</dict>
+</plist>

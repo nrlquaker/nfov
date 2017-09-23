@@ -38,7 +38,12 @@
             "electronPackagerConfig": {
                 "packageManager": "npm",
                 "icon": "assets/icons/icon.icns",
-                "appCategoryType": "public.app-category.utilities"
+                "appCategoryType": "public.app-category.utilities",
+                "extendInfo": "assets/Info.plist",
+                "extraResource": [
+                    "assets/icons/file_diz.icns",
+                    "assets/icons/file_nfo.icns"
+                ]
             },
             "github_repository": {
                 "owner": "nrlquaker",

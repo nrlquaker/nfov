@@ -14,11 +14,13 @@ ipcRenderer.on('open-file', (_: any, filePath: string) => {
     container!.scrollIntoView()
     setText(anchorme(loadFile(filePath)))
     openLinksInExternalBrowser()
+    setCloseDocumentEnable(true)
 })
 
 ipcRenderer.on('close-file', () => {
     setTitle(remote.app.getName())
     setText('')
+    setCloseDocumentEnable(false)
 })
 
 ipcRenderer.on('open-preferences', () => {
@@ -40,6 +42,11 @@ ipcRenderer.on('font-changed', (_: any, fontName: string) => {
 ipcRenderer.on('font-size-changed', (_: any, fontSize: string) => {
     userPreferences.setFontSize(fontSize)
 })
+
+function setCloseDocumentEnable(enable: boolean) {
+    const menu = remote.Menu.getApplicationMenu()
+    menu.items[1].submenu!.items[1].enabled = enable
+}
 
 function openLinksInExternalBrowser() {
     const links = document.querySelectorAll('a[href]')

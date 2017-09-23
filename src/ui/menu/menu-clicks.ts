@@ -1,4 +1,4 @@
-import { dialog, ipcMain, Menu, shell } from 'electron'
+import { dialog, ipcMain, shell } from 'electron'
 import { ClickHandler } from './click-handler'
 
 export function openFile(): ClickHandler {
@@ -11,7 +11,6 @@ export function openFile(): ClickHandler {
             },
             (filePaths: string[]) => {
                 if (!filePaths) return
-                setCloseDocumentEnable(true)
                 emit(browserWindow, 'open-file', filePaths[0])
             }
         )
@@ -20,7 +19,6 @@ export function openFile(): ClickHandler {
 
 export function closeFile(): ClickHandler {
     return (_, browserWindow) => {
-        setCloseDocumentEnable(false)
         emit(browserWindow, 'close-file')
     }
 }
@@ -49,9 +47,4 @@ function emit(window: Electron.BrowserWindow, channel: string, arg?: string) {
     } else {
         ipcMain.emit(channel, '', arg)
     }
-}
-
-function setCloseDocumentEnable(enable: boolean) {
-    const menu = Menu.getApplicationMenu()
-    menu.items[1].submenu!.items[1].enabled = enable
 }

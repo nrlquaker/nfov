@@ -3,11 +3,24 @@ import { ipcRenderer, remote, shell } from 'electron'
 import { basename } from 'path'
 import { loadFile } from './fs/load-file'
 import { setText, setTitle } from './ui/document/document'
-import './ui/drag-n-drop/drag-n-drop'
 import * as userPreferences from './ui/preferences/user-preferences'
 import './ui/settings/window-settings'
 
 const container = document.getElementById('app-container')
+
+document.addEventListener('drop', (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    const fileName = e.dataTransfer.files[0].path.toLowerCase()
+    if (fileName.endsWith('nfo') || fileName.endsWith('diz')) {
+        ipcRenderer.send('open-file', fileName)
+    }
+})
+document.addEventListener('dragover', (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    e.dataTransfer.dropEffect = 'copy'
+})
 
 ipcRenderer.on('open-file', (_: any, filePath: string) => {
     setTitle(`${basename(filePath)} - ${remote.app.getName()}`)

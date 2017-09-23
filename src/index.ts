@@ -4,6 +4,7 @@ import { buildMenu } from './ui/menu/build-menu'
 const isDevMode = process.execPath.match(/[\\/]electron/)
 let mainWindow: Electron.BrowserWindow | null = null
 let preferencesWindow: Electron.BrowserWindow | null = null
+let filePathToOpen: string
 
 function createMainWindow() {
     mainWindow = new BrowserWindow({
@@ -16,7 +17,12 @@ function createMainWindow() {
     if (isDevMode) {
         mainWindow.webContents.openDevTools()
     }
-    mainWindow.on('ready-to-show', () => mainWindow!.show())
+    mainWindow.on('ready-to-show', () => {
+        if (filePathToOpen) {
+            openFile(filePathToOpen)
+        }
+        mainWindow!.show()
+    })
     mainWindow.on('close', () => {
         mainWindow = null
         preferencesWindow = null
@@ -53,7 +59,17 @@ app.on('ready', () => {
     Menu.setApplicationMenu(buildMenu())
     createMainWindow()
     createPreferencesWindow()
+    app.on('open-file', (_, filePath) => {
+        openFile(filePath)
+    })
 })
+
+app.on('will-finish-launching', () => {
+    app.once('open-file', (_, filePath) => {
+        filePathToOpen = filePath
+    })
+})
+
 app.on('window-all-closed', () => app.quit())
 
 ipcMain.on('bg-color-changed', (_: any, color: string) => {
@@ -73,9 +89,14 @@ ipcMain.on('font-size-changed', (_: any, fontSize: string) => {
 })
 
 ipcMain.on('open-file', (_: any, filePath: string) => {
-    mainWindow!.webContents.send('open-file', filePath)
+    openFile(filePath)
 })
 
 ipcMain.on('close-file', () => {
     mainWindow!.webContents.send('close-file')
 })
+
+function openFile(filePath: string): void {
+    app.addRecentDocument(filePath)
+    mainWindow!.webContents.send('open-file', filePath)
+}

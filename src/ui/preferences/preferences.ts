@@ -1,4 +1,5 @@
 import { ipcRenderer } from 'electron'
+import '../settings/disable-drag-n-drop'
 import '../settings/window-settings'
 import * as storage from './storage'
 

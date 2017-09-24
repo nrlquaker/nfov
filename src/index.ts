@@ -92,6 +92,10 @@ ipcMain.on('open-file', (_: any, filePath: string) => {
     openFile(filePath)
 })
 
+ipcMain.on('export-to-png', (_: any, fileName: string) => {
+    mainWindow!.webContents.send('export-to-png', fileName)
+})
+
 ipcMain.on('close-file', () => {
     mainWindow!.webContents.send('close-file')
 })

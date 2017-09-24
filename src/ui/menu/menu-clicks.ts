@@ -1,5 +1,8 @@
-import { dialog, ipcMain, shell } from 'electron'
+import { app, dialog, ipcMain, shell } from 'electron'
+import { basename } from 'path'
 import { ClickHandler } from './click-handler'
+
+let lastOpenedFile: string
 
 export function openFile(): ClickHandler {
     return (_, browserWindow) => {
@@ -11,7 +14,23 @@ export function openFile(): ClickHandler {
             },
             (filePaths: string[]) => {
                 if (!filePaths) return
+                lastOpenedFile = filePaths[0]
                 emit(browserWindow, 'open-file', filePaths[0])
+            }
+        )
+    }
+}
+
+export function exportToPng(): ClickHandler {
+    return (_, browserWindow) => {
+        dialog.showSaveDialog(
+            browserWindow,
+            {
+                defaultPath: `${app.getPath('downloads')}/${basename(lastOpenedFile)}.png`
+            },
+            (fileName: string) => {
+                if (!fileName) return
+                emit(browserWindow, 'export-to-png', fileName)
             }
         )
     }

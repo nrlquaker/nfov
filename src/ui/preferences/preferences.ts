@@ -56,3 +56,7 @@ ipcRenderer.on('close-file', (_: any) => {
 ipcRenderer.on('open-file', (_: any, msg: string) => {
     ipcRenderer.send('open-file', msg)
 })
+
+ipcRenderer.on('export-to-png', (_: any, msg: string) => {
+    ipcRenderer.send('export-to-png', msg)
+})

@@ -1,5 +1,5 @@
 import { app, Menu } from 'electron'
-import { closeFile, openFile, openHomepage, openPreferences, reportIssue } from './menu-clicks'
+import * as clicks from './menu-clicks'
 
 export function buildMenu(): Electron.Menu {
     const template: Electron.MenuItemConstructorOptions[] = [
@@ -8,7 +8,11 @@ export function buildMenu(): Electron.Menu {
             submenu: [
                 { role: 'about' },
                 { type: 'separator' },
-                { label: 'Preferences', accelerator: 'Cmd+,', click: openPreferences() },
+                {
+                    label: 'Preferences',
+                    accelerator: 'Cmd+,',
+                    click: clicks.openPreferences()
+                },
                 { type: 'separator' },
                 { role: 'services', submenu: [] },
                 { type: 'separator' },
@@ -22,8 +26,19 @@ export function buildMenu(): Electron.Menu {
         {
             label: 'File',
             submenu: [
-                { label: 'Open...', accelerator: 'Cmd+O', click: openFile() },
-                { label: 'Close', accelerator: 'Cmd+W', click: closeFile(), enabled: false }
+                { label: 'Open...', accelerator: 'Cmd+O', click: clicks.openFile() },
+                {
+                    label: 'Export to png...',
+                    accelerator: 'Cmd+E',
+                    click: clicks.exportToPng(),
+                    enabled: false
+                },
+                {
+                    label: 'Close',
+                    accelerator: 'Cmd+W',
+                    click: clicks.closeFile(),
+                    enabled: false
+                }
             ]
         },
         {
@@ -47,8 +62,8 @@ export function buildMenu(): Electron.Menu {
         {
             role: 'help',
             submenu: [
-                { label: 'Open homepage...', click: openHomepage() },
-                { label: 'Repor issue...', click: reportIssue() }
+                { label: 'Open homepage...', click: clicks.openHomepage() },
+                { label: 'Repor issue...', click: clicks.reportIssue() }
             ]
         }
     ]

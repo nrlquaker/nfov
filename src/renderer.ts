@@ -1,5 +1,8 @@
 import anchorme from 'anchorme'
+import * as toBuffer from 'blob-to-buffer'
+import * as domtoimage from 'dom-to-image'
 import { ipcRenderer, remote, shell } from 'electron'
+import * as fs from 'fs'
 import { basename } from 'path'
 import { loadFile } from './fs/load-file'
 import { setText, setTitle } from './ui/document/document'
@@ -27,13 +30,22 @@ ipcRenderer.on('open-file', (_: any, filePath: string) => {
     container!.scrollIntoView()
     setText(anchorme(loadFile(filePath)))
     openLinksInExternalBrowser()
-    setCloseDocumentEnable(true)
+    setFileMenuItemsEnable(true)
 })
 
 ipcRenderer.on('close-file', () => {
     setTitle(remote.app.getName())
     setText('')
-    setCloseDocumentEnable(false)
+    setFileMenuItemsEnable(false)
+})
+
+ipcRenderer.on('export-to-png', (_: any, fileName: string) => {
+    domtoimage.toBlob(container).then((blob: Blob) => {
+        toBuffer(blob, (__: any, buffer: Buffer) => {
+            fs.writeFile(fileName, buffer)
+            remote.app.dock.downloadFinished(fileName)
+        })
+    })
 })
 
 ipcRenderer.on('open-preferences', () => {
@@ -56,9 +68,10 @@ ipcRenderer.on('font-size-changed', (_: any, fontSize: string) => {
     userPreferences.setFontSize(fontSize)
 })
 
-function setCloseDocumentEnable(enable: boolean) {
+function setFileMenuItemsEnable(enable: boolean) {
     const menu = remote.Menu.getApplicationMenu()
     menu.items[1].submenu!.items[1].enabled = enable
+    menu.items[1].submenu!.items[2].enabled = enable
 }
 
 function openLinksInExternalBrowser() {

@@ -101,6 +101,5 @@ ipcMain.on('close-file', () => {
 })
 
 function openFile(filePath: string): void {
-    app.addRecentDocument(filePath)
     mainWindow!.webContents.send('open-file', filePath)
 }

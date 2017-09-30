@@ -31,6 +31,7 @@ ipcRenderer.on('open-file', (_: any, filePath: string) => {
     setText(anchorme(loadFile(filePath)))
     openLinksInExternalBrowser()
     setFileMenuItemsEnable(true)
+    remote.app.addRecentDocument(filePath)
 })
 
 ipcRenderer.on('close-file', () => {

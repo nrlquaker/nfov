@@ -63,6 +63,7 @@
         "tslib": "^1.7.1"
     },
     "devDependencies": {
+        "@types/blob-to-buffer": "^1.2.0",
         "@types/electron-json-storage": "0.0.21",
         "electron-forge": "^4.1.2",
         "electron-prebuilt-compile": "1.7.8",

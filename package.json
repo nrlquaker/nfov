@@ -54,20 +54,20 @@
     "dependencies": {
         "anchorme": "^1.1.2",
         "blob-to-buffer": "^1.2.6",
-        "dom-to-image": "^2.5.2",
+        "dom-to-image": "^2.6.0",
         "electron-compile": "^6.4.1",
-        "electron-json-storage": "^3.1.1",
+        "electron-json-storage": "^3.2.0",
         "fs": "0.0.1-security",
         "iconv-lite": "^0.4.19",
         "path": "^0.12.7",
-        "tslib": "^1.7.1"
+        "tslib": "^1.8.0"
     },
     "devDependencies": {
         "@types/blob-to-buffer": "^1.2.0",
-        "@types/electron-json-storage": "0.0.21",
+        "@types/electron-json-storage": "^3.1.0",
         "electron-forge": "^4.1.2",
-        "electron-prebuilt-compile": "1.7.8",
-        "prettier": "^1.7.2",
+        "electron-prebuilt-compile": "1.7.9",
+        "prettier": "^1.7.4",
         "tslint": "^5.7.0",
         "typescript": "^2.5.3"
     }

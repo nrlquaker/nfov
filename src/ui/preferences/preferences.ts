@@ -39,12 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 })
 
-function updateTextColor(jscolor: string) {
+function updateTextColor(jscolor: string): void {
     storage.setTextColor('#' + jscolor)
     ipcRenderer.send('text-color-changed', '#' + jscolor)
 }
 
-function updateBgColor(jscolor: string) {
+function updateBgColor(jscolor: string): void {
     storage.setBgColor('#' + jscolor)
     ipcRenderer.send('bg-color-changed', '#' + jscolor)
 }

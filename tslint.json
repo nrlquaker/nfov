@@ -1,6 +1,10 @@
 {
     "extends": "tslint:recommended",
     "rules": {
+        "typedef": [
+            true,
+            "call-signature"
+        ],
         "curly": [
             true,
             "ignore-same-line"

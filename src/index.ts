@@ -6,7 +6,7 @@ let mainWindow: Electron.BrowserWindow | null = null
 let preferencesWindow: Electron.BrowserWindow | null = null
 let filePathToOpen: string
 
-function createMainWindow() {
+function createMainWindow(): void {
     mainWindow = new BrowserWindow({
         width: 540,
         height: 800,
@@ -30,7 +30,7 @@ function createMainWindow() {
     })
 }
 
-function createPreferencesWindow() {
+function createPreferencesWindow(): void {
     preferencesWindow = new BrowserWindow({
         width: 370,
         height: 220,

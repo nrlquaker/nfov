@@ -60,7 +60,7 @@ export function reportIssue(): ClickHandler {
     }
 }
 
-function emit(window: Electron.BrowserWindow, channel: string, arg?: string) {
+function emit(window: Electron.BrowserWindow, channel: string, arg?: string): void {
     if (window) {
         window.webContents.send(channel, arg)
     } else {

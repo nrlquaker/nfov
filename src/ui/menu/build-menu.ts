@@ -26,7 +26,11 @@ export function buildMenu(): Electron.Menu {
         {
             label: 'File',
             submenu: [
-                { label: 'Open...', accelerator: 'Cmd+O', click: clicks.openFile() },
+                {
+                    label: 'Open...',
+                    accelerator: 'Cmd+O',
+                    click: clicks.openFile()
+                },
                 {
                     label: 'Export to png...',
                     accelerator: 'Cmd+E',
@@ -43,17 +47,7 @@ export function buildMenu(): Electron.Menu {
         },
         {
             label: 'Edit',
-            submenu: [
-                { role: 'undo' },
-                { role: 'redo' },
-                { type: 'separator' },
-                { role: 'cut' },
-                { role: 'copy' },
-                { role: 'paste' },
-                { role: 'pasteandmatchstyle' },
-                { role: 'delete' },
-                { role: 'selectall' }
-            ]
+            submenu: [{ role: 'copy' }, { role: 'selectall' }]
         },
         {
             role: 'window',

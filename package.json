@@ -2,7 +2,7 @@
     "name": "nfov",
     "productName": "nfov",
     "version": "1.0.0",
-    "description": "Simple nfo viewer",
+    "description": "Simple nfo/diz viewer for macOS",
     "os": [
         "darwin"
     ],

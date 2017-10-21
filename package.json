@@ -59,6 +59,7 @@
         "electron-json-storage": "^3.2.0",
         "fs": "0.0.1-security",
         "iconv-lite": "^0.4.19",
+        "jscolor-picker": "^2.0.4",
         "path": "^0.12.7",
         "photonkit": "^0.1.2",
         "tslib": "^1.8.0"

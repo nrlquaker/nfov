@@ -15,7 +15,7 @@ export function saveImage(fileName: string): Promise<string> {
 
 export function openLinksInExternalBrowser(): void {
     const links = document.querySelectorAll('a[href]')
-    Array.prototype.forEach.call(links, (link: Element) => {
+    for (const link of links) {
         const url = link.getAttribute('href')
         if (url!.indexOf('http') === 0) {
             link.addEventListener('click', (e) => {
@@ -23,7 +23,7 @@ export function openLinksInExternalBrowser(): void {
                 shell.openExternal(url!)
             })
         }
-    })
+    }
 }
 
 export function setFileMenuItemsEnable(enable: boolean): void {

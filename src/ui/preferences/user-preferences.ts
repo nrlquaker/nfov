@@ -10,6 +10,13 @@ export function setBgColor(backgroundColor: string): void {
     container!.style.backgroundColor = backgroundColor
 }
 
+export function setLinkColor(linkColor: string): void {
+    const links = document.getElementsByTagName('a')
+    for (const link of links) {
+        link.style.color = linkColor
+    }
+}
+
 export function setFont(fontName: string): void {
     container!.style.fontFamily = `"${fontName}"`
 }

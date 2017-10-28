@@ -12,8 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const bgCp = document.getElementById('cp_bg') as HTMLInputElement
     storage.getBgColor((color: string) => {
-        (bgCp.value = color)
+        bgCp.value = color
         ipcRenderer.send('bg-color-changed', color)
+    })
+
+    const linkCp = document.getElementById('cp_link') as HTMLInputElement
+    storage.getLinkColor((color: string) => {
+        linkCp.value = color
+        ipcRenderer.send('link-color-changed', color)
     })
 
     const fontSelector = document.getElementById('font_selector') as HTMLSelectElement
@@ -47,6 +53,11 @@ function updateTextColor(jscolor: string): void {
 function updateBgColor(jscolor: string): void {
     storage.setBgColor('#' + jscolor)
     ipcRenderer.send('bg-color-changed', '#' + jscolor)
+}
+
+function updateLinkColor(jscolor: string): void {
+    storage.setLinkColor('#' + jscolor)
+    ipcRenderer.send('link-color-changed', '#' + jscolor)
 }
 
 ipcRenderer.on('close-file', (_: any) => {

@@ -12,10 +12,6 @@ pre {
   padding: 1em;
 }
 
-a {
-    color: #01FF70;
-}
-
 @font-face {
 font-family: 'BlockZone';
 src: url('../assets/fonts/BlockZone.ttf') format('truetype')

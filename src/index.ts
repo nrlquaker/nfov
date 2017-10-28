@@ -33,7 +33,7 @@ function createMainWindow(): void {
 function createPreferencesWindow(): void {
     preferencesWindow = new BrowserWindow({
         width: 370,
-        height: 220,
+        height: 240,
         frame: false,
         show: false,
         titleBarStyle: 'hidden',
@@ -78,6 +78,10 @@ ipcMain.on('bg-color-changed', (_: any, color: string) => {
 
 ipcMain.on('text-color-changed', (_: any, color: string) => {
     mainWindow!.webContents.send('text-color-changed', color)
+})
+
+ipcMain.on('link-color-changed', (_: any, color: string) => {
+    mainWindow!.webContents.send('link-color-changed', color)
 })
 
 ipcMain.on('font-changed', (_: any, fontName: string) => {

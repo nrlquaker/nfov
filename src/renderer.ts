@@ -32,6 +32,10 @@ ipcRenderer.on('text-color-changed', (_: any, color: string) => {
     userPreferences.setTextColor(color)
 })
 
+ipcRenderer.on('link-color-changed', (_: any, color: string) => {
+    userPreferences.setLinkColor(color)
+})
+
 ipcRenderer.on('font-changed', (_: any, fontName: string) => {
     userPreferences.setFont(fontName)
 })

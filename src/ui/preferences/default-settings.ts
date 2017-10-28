@@ -14,4 +14,8 @@ export class DefaultSettings {
     public static getTextColor(): string {
         return '#FFFFFF'
     }
+
+    public static getLinkColor(): string {
+        return '#01FF70'
+    }
 }

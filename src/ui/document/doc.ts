@@ -2,6 +2,8 @@ import anchorme from 'anchorme'
 import { basename } from 'path'
 import { loadFile } from '../../fs/load-file'
 import { openLinksInExternalBrowser, setFileMenuItemsEnable } from '../../utils/general-utils'
+import { getLinkColor } from '../preferences/storage'
+import { setLinkColor } from '../preferences/user-preferences'
 
 export class Doc {
     private appName: string
@@ -18,6 +20,7 @@ export class Doc {
         this.setTitle(`${basename(filePath)} - ${this.appName}`)
         this.container.scrollIntoView()
         this.setText(anchorme(loadFile(filePath)))
+        getLinkColor((linkColor) => setLinkColor(linkColor))
         openLinksInExternalBrowser()
         setFileMenuItemsEnable(true)
     }
@@ -26,7 +29,7 @@ export class Doc {
         this.setTitle(this.appName)
         this.setText('')
         setFileMenuItemsEnable(false)
-}
+    }
 
     private setTitle(title: string): void {
         this.document.title = title

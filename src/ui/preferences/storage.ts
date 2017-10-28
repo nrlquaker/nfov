@@ -29,6 +29,20 @@ export function getTextColor(callback: (textColor: string) => void): void {
     })
 }
 
+export function setLinkColor(linkColor: string): void {
+    storage.set('linkcolor', linkColor, empty)
+}
+
+export function getLinkColor(callback: (linkcolor: string) => void): void {
+    storage.has('linkcolor', (_, hasKey) => {
+        if (!hasKey) {
+            callback(DefaultSettings.getLinkColor())
+        } else {
+            storage.get('linkcolor', (__, data: string) => callback(data))
+        }
+    })
+}
+
 export function setFontName(fontName: string): void {
     storage.set('fontName', fontName, empty)
 }

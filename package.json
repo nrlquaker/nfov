@@ -56,7 +56,7 @@
         "blob-to-buffer": "^1.2.6",
         "dom-to-image": "^2.6.0",
         "electron-compile": "^6.4.1",
-        "electron-json-storage": "^3.2.0",
+        "electron-json-storage": "^4.0.2",
         "fs": "0.0.1-security",
         "iconv-lite": "^0.4.19",
         "jscolor-picker": "^2.0.4",
@@ -66,7 +66,7 @@
     },
     "devDependencies": {
         "@types/blob-to-buffer": "^1.2.0",
-        "@types/electron-json-storage": "^3.1.0",
+        "@types/electron-json-storage": "^4.0.0",
         "electron-forge": "^4.1.2",
         "electron-prebuilt-compile": "1.7.9",
         "prettier": "^1.7.4",

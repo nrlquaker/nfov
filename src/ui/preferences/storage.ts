@@ -33,12 +33,26 @@ export function setLinkColor(linkColor: string): void {
     storage.set('linkcolor', linkColor, empty)
 }
 
-export function getLinkColor(callback: (linkcolor: string) => void): void {
+export function getLinkColor(callback: (linkColor: string) => void): void {
     storage.has('linkcolor', (_, hasKey) => {
         if (!hasKey) {
             callback(DefaultSettings.getLinkColor())
         } else {
             storage.get('linkcolor', (__, data: string) => callback(data))
+        }
+    })
+}
+
+export function setSelectionColor(selectionColor: string): void {
+    storage.set('selectioncolor', selectionColor, empty)
+}
+
+export function getSelectionColor(callback: (selectionColor: string) => void): void {
+    storage.has('selectioncolor', (_, hasKey) => {
+        if (!hasKey) {
+            callback(DefaultSettings.getSelectionColor())
+        } else {
+            storage.get('selectioncolor', (__, data: string) => callback(data))
         }
     })
 }

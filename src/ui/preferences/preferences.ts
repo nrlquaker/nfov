@@ -22,6 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
         ipcRenderer.send('link-color-changed', color)
     })
 
+    const selectionCp = document.getElementById('cp_selection') as HTMLInputElement
+    storage.getSelectionColor((color: string) => {
+        selectionCp.value = color
+        ipcRenderer.send('selection-color-changed', color)
+    })
+
     const fontSelector = document.getElementById('font_selector') as HTMLSelectElement
     storage.getFontName((fontName: string) => {
         fontSelector.value = fontName
@@ -58,6 +64,11 @@ function updateBgColor(jscolor: string): void {
 function updateLinkColor(jscolor: string): void {
     storage.setLinkColor('#' + jscolor)
     ipcRenderer.send('link-color-changed', '#' + jscolor)
+}
+
+function updateSelectionColor(jscolor: string): void {
+    storage.setSelectionColor('#' + jscolor)
+    ipcRenderer.send('selection-color-changed', '#' + jscolor)
 }
 
 ipcRenderer.on('close-file', (_: any) => {

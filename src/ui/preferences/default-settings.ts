@@ -18,4 +18,8 @@ export class DefaultSettings {
     public static getLinkColor(): string {
         return '#01FF70'
     }
+
+    public static getSelectionColor(): string {
+        return '#B2D7FF'
+    }
 }

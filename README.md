@@ -6,6 +6,7 @@ nfov is simple ASCII art viewer powered by [Electron](https://electron.atom.io)
 
 - nfo, diz support
 - ability to change font, font size, text and background color
+- ability to change selection and link color
 - clickable links
 - ability to save rendered png
 

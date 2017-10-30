@@ -1,0 +1,30 @@
+notifications:
+  email:
+    on_success: change
+    on_failure: always
+
+os: osx
+osx_image: xcode8.3
+
+branches:
+  only:
+    - master
+
+language: node_js
+node_js:
+  - "8"
+
+cache:
+  timeout: 600
+  directories:
+    - node_modules
+    - $HOME/.electron
+
+install:
+- npm install
+- npm install electron
+- npm install -g markdownlint-cli
+
+script:
+- tslint --project tsconfig.json --type-check
+- markdownlint README.md

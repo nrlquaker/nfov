@@ -45,21 +45,25 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 })
 
+// @ts-ignore: no-unused-variable
 function updateTextColor(jscolor: string): void {
     storage.setTextColor('#' + jscolor)
     ipcRenderer.send('text-color-changed', '#' + jscolor)
 }
 
+// @ts-ignore: no-unused-variable
 function updateBgColor(jscolor: string): void {
     storage.setBgColor('#' + jscolor)
     ipcRenderer.send('bg-color-changed', '#' + jscolor)
 }
 
+// @ts-ignore: no-unused-variable
 function updateLinkColor(jscolor: string): void {
     storage.setLinkColor('#' + jscolor)
     ipcRenderer.send('link-color-changed', '#' + jscolor)
 }
 
+// @ts-ignore: no-unused-variable
 function updateSelectionColor(jscolor: string): void {
     storage.setSelectionColor('#' + jscolor)
     ipcRenderer.send('selection-color-changed', '#' + jscolor)

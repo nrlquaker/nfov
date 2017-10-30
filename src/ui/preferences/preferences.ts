@@ -1,7 +1,7 @@
 import { ipcRenderer } from 'electron'
+import * as storage from '../../fs/storage'
 import '../settings/disable-drag-n-drop'
 import '../settings/window-settings'
-import * as storage from './storage'
 
 document.addEventListener('DOMContentLoaded', () => {
     const textCp = document.getElementById('cp_text') as HTMLInputElement

@@ -5,34 +5,29 @@ import * as storage from './storage'
 
 document.addEventListener('DOMContentLoaded', () => {
     const textCp = document.getElementById('cp_text') as HTMLInputElement
-    storage.getTextColor((color: string) => {
-        textCp.value = color
-        ipcRenderer.send('text-color-changed', color)
-    })
+    const textColor = storage.getTextColor()
+    textCp.value = textColor
+    ipcRenderer.send('text-color-changed', textColor)
 
     const bgCp = document.getElementById('cp_bg') as HTMLInputElement
-    storage.getBgColor((color: string) => {
-        bgCp.value = color
-        ipcRenderer.send('bg-color-changed', color)
-    })
+    const bgColor = storage.getBgColor()
+    bgCp.value = bgColor
+    ipcRenderer.send('bg-color-changed', bgColor)
 
     const linkCp = document.getElementById('cp_link') as HTMLInputElement
-    storage.getLinkColor((color: string) => {
-        linkCp.value = color
-        ipcRenderer.send('link-color-changed', color)
-    })
+    const linkColor = storage.getLinkColor()
+    linkCp.value = linkColor
+    ipcRenderer.send('link-color-changed', linkColor)
 
     const selectionCp = document.getElementById('cp_selection') as HTMLInputElement
-    storage.getSelectionColor((color: string) => {
-        selectionCp.value = color
-        ipcRenderer.send('selection-color-changed', color)
-    })
+    const selectionColor = storage.getSelectionColor()
+    selectionCp.value = selectionColor
+    ipcRenderer.send('selection-color-changed', selectionColor)
 
     const fontSelector = document.getElementById('font_selector') as HTMLSelectElement
-    storage.getFontName((fontName: string) => {
-        fontSelector.value = fontName
-        ipcRenderer.send('font-changed', fontName)
-    })
+    const fontName = storage.getFontName()
+    fontSelector.value = fontName
+    ipcRenderer.send('font-changed', fontName)
 
     fontSelector.addEventListener('change', () => {
         storage.setFontName(fontSelector.value)
@@ -40,10 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     const fontSizeSelector = document.getElementById('font_size_selector') as HTMLSelectElement
-    storage.getFontSize((fontSize: string) => {
-        fontSizeSelector.value = fontSize
-        ipcRenderer.send('font-size-changed', fontSize)
-    })
+    const fontSize = storage.getFontSize()
+    fontSizeSelector.value = fontSize
+    ipcRenderer.send('font-size-changed', fontSize)
 
     fontSizeSelector.addEventListener('change', () => {
         storage.setFontSize(fontSizeSelector.value)

@@ -1,90 +1,49 @@
-import * as storage from 'electron-json-storage'
-import { DefaultSettings } from './default-settings'
+import * as settings from 'electron-settings'
 
 export function setBgColor(bgColor: string): void {
-    storage.set('bgcolor', bgColor, empty)
+    settings.set('bgColor', bgColor, { prettify: true })
 }
 
-export function getBgColor(callback: (bgColor: string) => void): void {
-    storage.has('bgcolor', (_, hasKey) => {
-        if (!hasKey) {
-            callback(DefaultSettings.getBgColor())
-        } else {
-            storage.get('bgcolor', (__, data: string) => callback(data))
-        }
-    })
+export function getBgColor(): string {
+    return settings.get('bgColor', '#000000') as string
 }
 
 export function setTextColor(textColor: string): void {
-    storage.set('textcolor', textColor, empty)
+    settings.set('textColor', textColor, { prettify: true} )
 }
 
-export function getTextColor(callback: (textColor: string) => void): void {
-    storage.has('textcolor', (_, hasKey) => {
-        if (!hasKey) {
-            callback(DefaultSettings.getTextColor())
-        } else {
-            storage.get('textcolor', (__, data: string) => callback(data))
-        }
-    })
+export function getTextColor(): string {
+    return settings.get('textColor', '#FFFFFF') as string
 }
 
 export function setLinkColor(linkColor: string): void {
-    storage.set('linkcolor', linkColor, empty)
+    settings.set('linkColor', linkColor, { prettify: true })
 }
 
-export function getLinkColor(callback: (linkColor: string) => void): void {
-    storage.has('linkcolor', (_, hasKey) => {
-        if (!hasKey) {
-            callback(DefaultSettings.getLinkColor())
-        } else {
-            storage.get('linkcolor', (__, data: string) => callback(data))
-        }
-    })
+export function getLinkColor(): string {
+    return settings.get('linkColor', '#01FF70') as string
 }
 
 export function setSelectionColor(selectionColor: string): void {
-    storage.set('selectioncolor', selectionColor, empty)
+    settings.set('selectionColor', selectionColor, { prettify: true })
 }
 
-export function getSelectionColor(callback: (selectionColor: string) => void): void {
-    storage.has('selectioncolor', (_, hasKey) => {
-        if (!hasKey) {
-            callback(DefaultSettings.getSelectionColor())
-        } else {
-            storage.get('selectioncolor', (__, data: string) => callback(data))
-        }
-    })
+export function getSelectionColor(): string {
+    return settings.get('selectionColor', '#B2D7FF') as string
 }
 
 export function setFontName(fontName: string): void {
-    storage.set('fontName', fontName, empty)
+    settings.set('fontName', fontName, { prettify: true })
 }
 
-export function getFontName(callback: (fontName: string) => void): void {
-    storage.has('fontName', (_, hasKey) => {
-        if (!hasKey) {
-            callback(DefaultSettings.getFontName())
-        } else {
-            storage.get('fontName', (__, data: string) => callback(data))
-        }
-    })
+export function getFontName(): string {
+    return settings.get('fontName', 'Px437 IBM PS/2thin1') as string
 }
 
 export function setFontSize(fontSize: string): void {
-    storage.set('fontSize', fontSize, empty)
+    settings.set('fontSize', fontSize, { prettify: true })
 }
 
-export function getFontSize(callback: (fontSize: string) => void): void {
-    storage.has('fontSize', (_, hasKey) => {
-        if (!hasKey) {
-            callback(DefaultSettings.getFontSize())
-        } else {
-            storage.get('fontSize', (__, data: string) => callback(data))
-        }
-    })
-}
-
-function empty(): void {
-    // empty
+export function getFontSize(): string {
+    return settings.get('fontSize', '12') as string
 }

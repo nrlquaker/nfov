@@ -20,7 +20,7 @@ export class Doc {
         this.setTitle(`${basename(filePath)} - ${this.appName}`)
         this.container.scrollIntoView()
         this.setText(anchorme(loadFile(filePath)))
-        getLinkColor((linkColor) => setLinkColor(linkColor))
+        setLinkColor(getLinkColor())
         openLinksInExternalBrowser()
         setFileMenuItemsEnable(true)
     }

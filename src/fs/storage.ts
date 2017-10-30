@@ -37,7 +37,7 @@ export function setFontName(fontName: string): void {
 }
 
 export function getFontName(): string {
-    return settings.get('fontName', 'ProFontWindows') as string
+    return settings.get('fontName', 'Px437 IBM PS/2thin2') as string
 }
 
 export function setFontSize(fontSize: string): void {

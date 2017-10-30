@@ -1,4 +1,5 @@
 import * as toBuffer from 'blob-to-buffer'
+// @ts-ignore: noImplicitAny
 import * as domtoimage from 'dom-to-image'
 import { remote, shell } from 'electron'
 import * as fs from 'fs'

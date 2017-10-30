@@ -29,7 +29,7 @@ export function setSelectionColor(selectionColor: string): void {
 }
 
 export function getSelectionColor(): string {
-    return settings.get('selectionColor', '#B2D7FF') as string
+    return settings.get('selectionColor', '#7FDBFF') as string
 }
 
 export function setFontName(fontName: string): void {
@@ -37,7 +37,7 @@ export function setFontName(fontName: string): void {
 }
 
 export function getFontName(): string {
-    return settings.get('fontName', 'Px437 IBM PS/2thin1') as string
+    return settings.get('fontName', 'ProFontWindows') as string
 }
 
 export function setFontSize(fontSize: string): void {
@@ -45,5 +45,5 @@ export function setFontSize(fontSize: string): void {
 }
 
 export function getFontSize(): string {
-    return settings.get('fontSize', '12') as string
+    return settings.get('fontSize', '13') as string
 }

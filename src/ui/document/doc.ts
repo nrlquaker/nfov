@@ -1,8 +1,8 @@
 import anchorme from 'anchorme'
 import { basename } from 'path'
 import { loadFile } from '../../fs/load-file'
+import * as storage from '../../fs/storage'
 import { openLinksInExternalBrowser, setFileMenuItemsEnable } from '../../utils/general-utils'
-import * as storage from '../preferences/storage'
 import * as documentStyle from './document-style'
 
 export class Doc {

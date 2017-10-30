@@ -1,7 +1,7 @@
 import { ipcRenderer, remote } from 'electron'
 import { Doc } from './ui/document/doc'
+import * as documentStyle from './ui/document/document-style'
 import './ui/document/enable-drag-and-drop'
-import * as userPreferences from './ui/preferences/user-preferences'
 import './ui/settings/window-settings'
 import { saveImage } from './utils/general-utils'
 
@@ -25,25 +25,25 @@ ipcRenderer.on('open-preferences', () => {
 })
 
 ipcRenderer.on('bg-color-changed', (_: any, color: string) => {
-    userPreferences.setBgColor(color)
+    documentStyle.setBgColor(color)
 })
 
 ipcRenderer.on('text-color-changed', (_: any, color: string) => {
-    userPreferences.setTextColor(color)
+    documentStyle.setTextColor(color)
 })
 
 ipcRenderer.on('link-color-changed', (_: any, color: string) => {
-    userPreferences.setLinkColor(color)
+    documentStyle.setLinkColor(color)
 })
 
 ipcRenderer.on('selection-color-changed', (_: any, color: string) => {
-    userPreferences.setSelectionColor(color)
+    documentStyle.setSelectionColor(color)
 })
 
 ipcRenderer.on('font-changed', (_: any, fontName: string) => {
-    userPreferences.setFont(fontName)
+    documentStyle.setFont(fontName)
 })
 
 ipcRenderer.on('font-size-changed', (_: any, fontSize: string) => {
-    userPreferences.setFontSize(fontSize)
+    documentStyle.setFontSize(fontSize)
 })

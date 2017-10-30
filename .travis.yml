@@ -1,0 +1,21 @@
+os: osx
+platform:
+- x64
+environment:
+- nodejs_version: 8
+cache:
+- '%APPDATA%\npm-cache'
+- '%USERPROFILE%\.electron'
+- node_modules
+install:
+- npm install
+- npm update
+
+test_script:
+- node --version
+- npm --version
+- npm run lint
+- electron-forge lint
+- tslint --project tsconfig.json --type-check --force
+build_script:
+- electron-forge make

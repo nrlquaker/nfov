@@ -43,6 +43,13 @@
                 "extraResource": [
                     "assets/icons/file_diz.icns",
                     "assets/icons/file_nfo.icns"
+                ],
+                "ignore": [
+                    ".vscode",
+                    "assets/icons",
+                    "assets/Info.plist",
+                    "screenshots",
+                    "node_modules/photonkit/docs"
                 ]
             },
             "github_repository": {

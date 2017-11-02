@@ -1,6 +1,6 @@
 # nfov
 
-nfov is simple ASCII art viewer powered by [Electron](https://electron.atom.io)
+nfov is simple ASCII art viewer for macOS powered by [Electron](https://electron.atom.io)
 
 ## Features
 

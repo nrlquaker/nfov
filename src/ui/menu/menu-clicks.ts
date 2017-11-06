@@ -37,27 +37,19 @@ export function exportToPng(): ClickHandler {
 }
 
 export function closeFile(): ClickHandler {
-    return (_, browserWindow) => {
-        emit(browserWindow, 'close-file')
-    }
+    return (_, browserWindow) => emit(browserWindow, 'close-file')
 }
 
 export function openPreferences(): ClickHandler {
-    return (_, browserWindow) => {
-        emit(browserWindow, 'open-preferences')
-    }
+    return (_, browserWindow) => emit(browserWindow, 'open-preferences')
 }
 
 export function openHomepage(): ClickHandler {
-    return () => {
-        shell.openExternal('https://github.com/nrlquaker/nfov')
-    }
+    return () => shell.openExternal('https://github.com/nrlquaker/nfov')
 }
 
 export function reportIssue(): ClickHandler {
-    return () => {
-        shell.openExternal('https://github.com/nrlquaker/nfov/issues/new')
-    }
+    return () => shell.openExternal('https://github.com/nrlquaker/nfov/issues/new')
 }
 
 function emit(window: Electron.BrowserWindow, channel: string, arg?: string): void {

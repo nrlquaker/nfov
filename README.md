@@ -37,7 +37,8 @@ brew cask install nfov
 
 - [Ascension](https://github.com/ansilove/Ascension)
 - [NFOViewer](http://blockart.sourceforge.net)
-- [QuickNFO](https://github.com/planbnet/QuickNFO) Quick Look plugin
+- [QuickNFO](https://github.com/planbnet/QuickNFO)
+- [termNFO](https://github.com/phracker/termNFO)
 
 ## License
 

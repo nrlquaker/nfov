@@ -6,9 +6,6 @@
             "request": "launch",
             "name": "Debug Main Process",
             "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron-forge-vscode-nix",
-            "windows": {
-                "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron-forge-vscode-win.cmd"
-            },
             "cwd": "${workspaceRoot}"
         }
     ]

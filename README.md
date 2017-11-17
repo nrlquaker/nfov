@@ -24,7 +24,6 @@ nfov is bundled with:
 Can be easily installed with:
 
 ```sh
-brew tap nrlquaker/personal
 brew cask install nfov
 ```
 

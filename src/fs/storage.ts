@@ -31,7 +31,7 @@ export function setSelectionColor(selectionColor: string): void {
 }
 
 export function getSelectionColor(): string {
-    return settings.get('selectionColor', '#7FDBFF', options) as string
+    return settings.get('selectionColor', '#39CCCC', options) as string
 }
 
 export function setFontName(fontName: string): void {

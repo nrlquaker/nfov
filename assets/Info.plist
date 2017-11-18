@@ -34,6 +34,21 @@
 				<key>LSHandlerRank</key>
 				<string>Default</string>
 			</dict>
+            <dict>
+				<key>CFBundleTypeExtensions</key>
+				<array>
+					<string>asc</string>
+					<string>ASC</string>
+				</array>
+				<key>CFBundleTypeIconFile</key>
+				<string>file_asc.icns</string>
+				<key>CFBundleTypeName</key>
+				<string>ASCII Artwork</string>
+				<key>CFBundleTypeRole</key>
+				<string>Viewer</string>
+				<key>LSHandlerRank</key>
+				<string>Default</string>
+			</dict>
 		</array>
 	</dict>
 </plist>

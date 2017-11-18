@@ -1,4 +1,13 @@
+export const supportedFiles = ['nfo', 'diz', 'asc']
+
 export function isFileSupported(fileName: string): boolean {
     const name = fileName.toLowerCase()
-    return name.endsWith('nfo') || name.endsWith('diz')
+    for (const file of supportedFiles) {
+        if (name.endsWith(file)) {
+            return true
+        } else {
+            continue
+        }
+    }
+    return false
 }

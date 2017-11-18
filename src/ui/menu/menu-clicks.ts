@@ -1,5 +1,6 @@
 import { app, dialog, ipcMain, shell } from 'electron'
 import { basename } from 'path'
+import { supportedFiles } from '../settings/supported-files'
 import { ClickHandler } from './click-handler'
 
 let lastOpenedFile: string
@@ -9,7 +10,7 @@ export function openFile(): ClickHandler {
         dialog.showOpenDialog(
             browserWindow,
             {
-                filters: [{ name: 'nfo', extensions: ['nfo', 'diz'] }],
+                filters: [{ name: 'nfo', extensions: supportedFiles }],
                 properties: ['openFile']
             },
             (filePaths: string[]) => {

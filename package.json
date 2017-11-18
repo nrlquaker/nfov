@@ -2,7 +2,7 @@
     "name": "nfov",
     "productName": "nfov",
     "version": "1.0.3",
-    "description": "Simple nfo/diz viewer for macOS",
+    "description": "Simple ASCII art viewer for macOS powered by Electron",
     "os": [
         "darwin"
     ],
@@ -21,6 +21,7 @@
     "keywords": [
         "nfo",
         "diz",
+        "asc",
         "ascii-art",
         "electron",
         "macos"

@@ -8,7 +8,7 @@ let filePathToOpen: string
 
 function createMainWindow(): void {
     mainWindow = new BrowserWindow({
-        width: 540,
+        width: 600,
         height: 800,
         show: false,
         zoomToPageWidth: true

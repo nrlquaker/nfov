@@ -15,7 +15,7 @@ export function setTextColor(textColor: string): void {
 }
 
 export function getTextColor(): string {
-    return settings.get('textColor', '#FFFFFF', options) as string
+    return settings.get('textColor', '#AAAAAA', options) as string
 }
 
 export function setLinkColor(linkColor: string): void {
@@ -23,7 +23,7 @@ export function setLinkColor(linkColor: string): void {
 }
 
 export function getLinkColor(): string {
-    return settings.get('linkColor', '#01FF70', options) as string
+    return settings.get('linkColor', '#00F900', options) as string
 }
 
 export function setSelectionColor(selectionColor: string): void {
@@ -31,7 +31,7 @@ export function setSelectionColor(selectionColor: string): void {
 }
 
 export function getSelectionColor(): string {
-    return settings.get('selectionColor', '#39CCCC', options) as string
+    return settings.get('selectionColor', '#00AAAA', options) as string
 }
 
 export function setFontName(fontName: string): void {
@@ -39,7 +39,7 @@ export function setFontName(fontName: string): void {
 }
 
 export function getFontName(): string {
-    return settings.get('fontName', 'Px437 IBM PS/2thin2', options) as string
+    return settings.get('fontName', 'BlockZone', options) as string
 }
 
 export function setFontSize(fontSize: string): void {

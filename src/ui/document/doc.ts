@@ -3,6 +3,7 @@ import { basename } from 'path'
 import { loadFile } from '../../fs/load-file'
 import * as storage from '../../fs/storage'
 import { openLinksInExternalBrowser, setFileMenuItemsEnable } from '../../utils/general-utils'
+import { anchormeOptions } from './anchorme-options'
 import * as documentStyle from './document-style'
 
 export class Doc {
@@ -19,7 +20,7 @@ export class Doc {
     public open(filePath: string): void {
         this.setTitle(`${basename(filePath)} - ${this.appName}`)
         this.container.scrollIntoView()
-        this.setText(anchorme(loadFile(filePath)))
+        this.setText(anchorme(loadFile(filePath), anchormeOptions))
         documentStyle.setLinkColor(storage.getLinkColor())
         openLinksInExternalBrowser()
         setFileMenuItemsEnable(true)

@@ -1,3 +1,4 @@
 export function isFileSupported(fileName: string): boolean {
-    return fileName.endsWith('nfo') || fileName.endsWith('diz')
+    const name = fileName.toLowerCase()
+    return name.endsWith('nfo') || name.endsWith('diz')
 }

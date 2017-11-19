@@ -46,7 +46,8 @@
                 "extendInfo": "assets/Info.plist",
                 "extraResource": [
                     "assets/icons/file_diz.icns",
-                    "assets/icons/file_nfo.icns"
+                    "assets/icons/file_nfo.icns",
+                    "assets/icons/file_asc.icns"
                 ],
                 "ignore": [
                     ".vscode",

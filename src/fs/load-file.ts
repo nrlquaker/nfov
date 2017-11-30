@@ -1,10 +1,9 @@
 import { readFileSync } from 'fs'
 import { decode } from 'iconv-lite'
-import { mapIsoToUtf } from './encoding/iso-to-utf-mapper'
+import '../extensions/string'
 
 export function loadFile(filePath: string): string {
     const fileContent = readFileSync(filePath)
-    const data = decode(fileContent, 'win1252')
-    const properData = mapIsoToUtf(data)
-    return properData.replaceAll('<', '&lt') // escape tags
+    const data = decode(fileContent, 'cp437')
+    return data.replaceAll('<', '&lt') // escape tags
 }

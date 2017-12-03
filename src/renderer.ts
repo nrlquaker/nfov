@@ -47,3 +47,7 @@ ipcRenderer.on('font-changed', (_: any, fontName: string) => {
 ipcRenderer.on('font-size-changed', (_: any, fontSize: string) => {
     documentStyle.setFontSize(fontSize)
 })
+
+ipcRenderer.on('font-smooting-changed', (_: any, enabled: boolean) => {
+    documentStyle.enableFontSmoothing(enabled)
+})

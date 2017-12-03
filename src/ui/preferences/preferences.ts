@@ -43,6 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
         storage.setFontSize(fontSizeSelector.value)
         ipcRenderer.send('font-size-changed', fontSizeSelector.value)
     })
+
+    const fontSmoothingCb = document.getElementById('font_smoothing_cb') as HTMLInputElement
+    const fontSmoothing = storage.getFontSmoothing()
+    fontSmoothingCb.checked = fontSmoothing
+    ipcRenderer.send('font-smooting-changed', fontSmoothing)
+
+    fontSmoothingCb.addEventListener('change', () => {
+        storage.setFontSmoothing(fontSmoothingCb.checked)
+        ipcRenderer.send('font-smooting-changed', fontSmoothingCb.checked)
+    })
 })
 
 // @ts-ignore: no-unused-variable

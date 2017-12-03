@@ -1,4 +1,4 @@
-export const supportedFiles = ['nfo', 'diz', 'asc']
+export const supportedFiles = ['nfo', 'diz', 'asc', 'txt']
 
 export function isFileSupported(fileName: string): boolean {
     const name = fileName.toLowerCase()

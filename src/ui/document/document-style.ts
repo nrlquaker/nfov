@@ -1,8 +1,10 @@
 const body = document.getElementById('body')
 const container = document.getElementById('app-container')
-const insertionRuleIndex = 0
+const styleSheet = document.styleSheets[0] as CSSStyleSheet
+const selectionRuleIndex = 0
+const fontSmoothingRuleIndex = 1
 
-insertEmptyRule()
+insertEmptyRules()
 
 export function setTextColor(textColor: string): void {
     container!.style.color = textColor
@@ -21,9 +23,8 @@ export function setLinkColor(linkColor: string): void {
 }
 
 export function setSelectionColor(selectionColor: string): void {
-    const styleSheet = document.styleSheets[0] as CSSStyleSheet
-    styleSheet.removeRule(insertionRuleIndex)
-    styleSheet.insertRule(`::selection { background: ${selectionColor}; }`, insertionRuleIndex)
+    styleSheet.removeRule(selectionRuleIndex)
+    styleSheet.insertRule(`::selection { background: ${selectionColor}; }`, selectionRuleIndex)
 }
 
 export function setFont(fontName: string): void {
@@ -34,7 +35,13 @@ export function setFontSize(fontSize: string): void {
     container!.style.fontSize = `${fontSize}px`
 }
 
-function insertEmptyRule(): void {
-    const ss = document.styleSheets[0] as CSSStyleSheet
-    ss.insertRule('::selection { }', insertionRuleIndex)
+export function enableFontSmoothing(enabled: boolean): void {
+    styleSheet.removeRule(fontSmoothingRuleIndex)
+    const rule = enabled ? '* { }' : '* { -webkit-font-smoothing: none; }'
+    styleSheet.insertRule(rule, fontSmoothingRuleIndex)
+}
+
+function insertEmptyRules(): void {
+    styleSheet.insertRule('::selection { }', selectionRuleIndex)
+    styleSheet.insertRule('* { }', fontSmoothingRuleIndex)
 }

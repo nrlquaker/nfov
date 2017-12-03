@@ -33,7 +33,7 @@ function createMainWindow(): void {
 function createPreferencesWindow(): void {
     preferencesWindow = new BrowserWindow({
         width: 370,
-        height: 260,
+        height: 280,
         frame: false,
         show: false,
         titleBarStyle: 'hidden',
@@ -94,6 +94,10 @@ ipcMain.on('font-changed', (_: any, fontName: string) => {
 
 ipcMain.on('font-size-changed', (_: any, fontSize: string) => {
     mainWindow!.webContents.send('font-size-changed', fontSize)
+})
+
+ipcMain.on('font-smooting-changed', (_: any, enabled: boolean) => {
+    mainWindow!.webContents.send('font-smooting-changed', enabled)
 })
 
 ipcMain.on('open-file', (_: any, filePath: string) => {

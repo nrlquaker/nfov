@@ -49,3 +49,11 @@ export function setFontSize(fontSize: string): void {
 export function getFontSize(): string {
     return settings.get('fontSize', '13', options) as string
 }
+
+export function setFontSmoothing(enabled: boolean): void {
+    settings.set('font-smoothing', enabled, options)
+}
+
+export function getFontSmoothing(): boolean {
+    return settings.get('font-smoothing', 'true', options) as boolean
+}

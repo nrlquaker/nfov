@@ -5,8 +5,7 @@ import { Point, remote, screen, shell } from 'electron'
 import * as fs from 'fs'
 
 export function saveImage(fileName: string): Promise<string> {
-    const container = document.getElementById('app_container')
-    return domtoimage.toBlob(container).then((blob: Blob) => {
+    return domtoimage.toBlob(document.body).then((blob: Blob) => {
         toBuffer(blob, (__: any, buffer: Buffer) => {
             fs.writeFile(fileName, buffer)
         })

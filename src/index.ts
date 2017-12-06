@@ -1,13 +1,13 @@
 import { app, BrowserWindow, ipcMain, Menu } from 'electron'
+import './compile/bypass-checker'
 import { getBgColor } from './fs/storage'
-import { buildMenu } from './ui/menu/build-menu'
+import buildMenu from './ui/menu/build-menu'
 import { showExportDialog, showOpenDialog } from './utils/dialogs'
 import { calculateCenterFor } from './utils/general-utils'
 
 const isDevMode = process.execPath.match(/[\\/]electron/)
 let mainWindow: Electron.BrowserWindow | null = null
 let preferencesWindow: Electron.BrowserWindow | null = null
-let filePathToOpen: string
 let lastOpenedFile: string
 
 function createMainWindow(): void {
@@ -23,9 +23,6 @@ function createMainWindow(): void {
         mainWindow.webContents.openDevTools()
     }
     mainWindow.on('ready-to-show', () => {
-        if (filePathToOpen) {
-            openFile(filePathToOpen)
-        }
         mainWindow!.show()
     })
     mainWindow.on('close', () => {
@@ -71,7 +68,12 @@ app.on('ready', () => {
 
 app.on('will-finish-launching', () => {
     app.once('open-file', (_, filePath) => {
-        filePathToOpen = filePath
+        app.on('ready', () => {
+            // Can't open file right away, because mainWindow is null
+            // at that point. Saving url and opening it in ready event
+            // causes the window size to be wrong.
+            setTimeout(() => openFile(filePath), 500)
+        })
     })
 })
 

@@ -1,7 +1,7 @@
 import { app, Menu } from 'electron'
 import * as clicks from './menu-clicks'
 
-export function buildMenu(isDevMode: boolean): Electron.Menu {
+export default function buildMenu(isDevMode: boolean): Electron.Menu {
     const template: Electron.MenuItemConstructorOptions[] = [
         {
             label: app.getName(),

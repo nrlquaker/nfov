@@ -1,10 +1,23 @@
-export const supportedFiles = ['nfo', 'diz', 'asc', 'txt']
+import { extname } from 'path'
+
+export const supportedTextFiles = ['.nfo', '.diz', '.asc', '.txt']
+export const supportedBinFiles = ['.ans']
+export const supportedFiles = supportedTextFiles.concat(supportedBinFiles)
+
+export enum FileType {
+    ANSI,
+    ASCII
+}
 
 export function isFileSupported(fileName: string): boolean {
-    const name = fileName.toLowerCase()
-    for (const file of supportedFiles) {
-        if (name.endsWith(file)) return true
-        continue
+    const extension = extname(fileName).toLowerCase()
+    return supportedFiles.includes(extension)
+}
+
+export function detectFileType(extension: string): FileType {
+    if (supportedTextFiles.includes(extension)) {
+        return FileType.ASCII
+    } else {
+        return FileType.ANSI
     }
-    return false
 }

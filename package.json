@@ -66,6 +66,7 @@
     },
     "dependencies": {
         "anchorme": "^1.1.2",
+        "ansilove.js": "https://github.com/ansilove/ansilove.js",
         "blob-to-buffer": "^1.2.7",
         "dom-to-image": "https://github.com/nrlquaker/dom-to-image/archive/2.6.1.tar.gz",
         "electron-compile": "^6.4.1",

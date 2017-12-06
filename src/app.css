@@ -9,7 +9,14 @@ html, body {
 
 pre {
   padding: 1em;
-  display: inline-block;
+}
+
+div {
+  pointer-events: none;
+}
+
+canvas {
+  display: block;
 }
 
 @font-face {

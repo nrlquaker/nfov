@@ -1,4 +1,4 @@
-const container = document.getElementById('app_container')
+const asciiContainer = document.getElementById('ascii_container')
 const styleSheet = document.styleSheets[0] as CSSStyleSheet
 const selectionRuleIndex = 0
 const fontSmoothingRuleIndex = 1
@@ -6,12 +6,12 @@ const fontSmoothingRuleIndex = 1
 insertEmptyRules()
 
 export function setTextColor(textColor: string): void {
-    container!.style.color = textColor
+    asciiContainer!.style.color = textColor
 }
 
 export function setBgColor(backgroundColor: string): void {
     document.body.style.backgroundColor = backgroundColor
-    container!.style.backgroundColor = backgroundColor
+    asciiContainer!.style.backgroundColor = backgroundColor
 }
 
 export function setLinkColor(linkColor: string): void {
@@ -27,11 +27,11 @@ export function setSelectionColor(selectionColor: string): void {
 }
 
 export function setFont(fontName: string): void {
-    container!.style.fontFamily = `"${fontName}"`
+    asciiContainer!.style.fontFamily = `"${fontName}"`
 }
 
 export function setFontSize(fontSize: string): void {
-    container!.style.fontSize = `${fontSize}px`
+    asciiContainer!.style.fontSize = `${fontSize}px`
 }
 
 export function enableFontSmoothing(enabled: boolean): void {

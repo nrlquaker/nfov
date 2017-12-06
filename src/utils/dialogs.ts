@@ -7,7 +7,7 @@ export function showOpenDialog(mainWindow: BrowserWindow): Promise<string> {
         dialog.showOpenDialog(
             mainWindow!,
             {
-                filters: [{ name: '', extensions: supportedFiles }],
+                filters: [{ name: '', extensions: removeDotFromExtensions(supportedFiles) }],
                 properties: ['openFile']
             },
             (filePaths: string[]) => {
@@ -32,4 +32,12 @@ export function showExportDialog(mainWindow: BrowserWindow,
             }
         )
     })
+}
+
+function removeDotFromExtensions(extt: string[]): string[] {
+    const res: string[] = []
+    extt.forEach((element) => {
+        res.push(element.substring(1))
+    })
+    return res
 }

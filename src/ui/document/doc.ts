@@ -1,43 +1,38 @@
-import anchorme from 'anchorme'
-import { basename } from 'path'
-import { loadFile } from '../../fs/load-file'
-import * as storage from '../../fs/storage'
-import { openLinksInExternalBrowser, setFileMenuItemsEnable } from '../../utils/general-utils'
-import { anchormeOptions } from './anchorme-options'
-import * as documentStyle from './document-style'
+import { basename, extname } from 'path'
+import { setFileMenuItemsEnable } from '../../utils/general-utils'
+import DocumentMode from './document-mode'
+import createRendererFor from './renderer/renderer-factory'
 
-export class Doc {
+export default class Doc {
     private appName: string
-    private document: Document
-    private container: HTMLElement
+    private asciiContainer: HTMLElement
+    private ansiContainer: HTMLElement
+    private documentMode: DocumentMode
 
-    constructor(appName: string, document: Document) {
+    constructor(appName: string) {
         this.appName = appName
-        this.document = document
-        this.container = document.getElementById('app_container')!
+        this.asciiContainer = document.getElementById('ascii_container')!
+        this.ansiContainer = document.getElementById('ansi_container')!
+        this.documentMode = new DocumentMode()
     }
 
     public open(filePath: string): void {
         this.setTitle(`${basename(filePath)} - ${this.appName}`)
-        this.container.scrollIntoView()
-        this.setText(anchorme(loadFile(filePath), anchormeOptions))
-        documentStyle.setLinkColor(storage.getLinkColor())
-        openLinksInExternalBrowser()
+        const extension = extname(filePath).toLowerCase()
+        this.documentMode.setModeFor(extension)
+        const renderer = createRendererFor(extension)
+        renderer.render(filePath)
         setFileMenuItemsEnable(true)
     }
 
     public close(): void {
+        this.ansiContainer.innerHTML = ''
+        this.asciiContainer.innerHTML = ''
         this.setTitle(this.appName)
-        this.setText('')
         setFileMenuItemsEnable(false)
     }
 
     private setTitle(title: string): void {
-        this.document.title = title
-    }
-
-    // Trim trailing spaces before newlines
-    private setText(text: string): void {
-        this.container.innerHTML = text.replace(/[^\S\r\n]+$/gm, '')
+        document.title = title
     }
 }

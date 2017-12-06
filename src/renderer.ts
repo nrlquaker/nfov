@@ -1,17 +1,15 @@
 import { ipcRenderer, remote } from 'electron'
-import { Doc } from './ui/document/doc'
-import * as documentStyle from './ui/document/document-style'
+import * as asciiDocumentStyle from './ui/document/ascii-document-style'
+import Doc from './ui/document/doc'
 import './ui/document/enable-drag-and-drop'
 import './ui/settings/window-settings'
 import { saveImage } from './utils/general-utils'
 
-const container = document.getElementById('app_container')!
-const doc = new Doc(remote.app.getName(), document)
+const doc = new Doc(remote.app.getName())
 
 ipcRenderer.on('open-file', (_: any, filePath: string) => {
     doc.open(filePath)
     remote.app.addRecentDocument(filePath)
-    ipcRenderer.send('window-size-changed', container.clientWidth, container.clientHeight)
 })
 
 ipcRenderer.on('show-open-dialog', () => ipcRenderer.send('show-open-dialog'))
@@ -29,29 +27,29 @@ ipcRenderer.on('export-to-png', (_: any, fileName: string) => {
 ipcRenderer.on('open-preferences', () => ipcRenderer.send('open-preferences'))
 
 ipcRenderer.on('bg-color-changed', (_: any, color: string) => {
-    documentStyle.setBgColor(color)
+    asciiDocumentStyle.setBgColor(color)
 })
 
 ipcRenderer.on('text-color-changed', (_: any, color: string) => {
-    documentStyle.setTextColor(color)
+    asciiDocumentStyle.setTextColor(color)
 })
 
 ipcRenderer.on('link-color-changed', (_: any, color: string) => {
-    documentStyle.setLinkColor(color)
+    asciiDocumentStyle.setLinkColor(color)
 })
 
 ipcRenderer.on('selection-color-changed', (_: any, color: string) => {
-    documentStyle.setSelectionColor(color)
+    asciiDocumentStyle.setSelectionColor(color)
 })
 
 ipcRenderer.on('font-changed', (_: any, fontName: string) => {
-    documentStyle.setFont(fontName)
+    asciiDocumentStyle.setFont(fontName)
 })
 
 ipcRenderer.on('font-size-changed', (_: any, fontSize: string) => {
-    documentStyle.setFontSize(fontSize)
+    asciiDocumentStyle.setFontSize(fontSize)
 })
 
 ipcRenderer.on('font-smooting-changed', (_: any, enabled: boolean) => {
-    documentStyle.enableFontSmoothing(enabled)
+    asciiDocumentStyle.enableFontSmoothing(enabled)
 })

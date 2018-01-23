@@ -14,7 +14,7 @@ export class Doc {
     constructor(appName: string, document: Document) {
         this.appName = appName
         this.document = document
-        this.container = document.getElementById('app-container')!
+        this.container = document.getElementById('app_container')!
     }
 
     public open(filePath: string): void {

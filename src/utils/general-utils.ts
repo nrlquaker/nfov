@@ -4,7 +4,7 @@ import * as domtoimage from 'dom-to-image'
 import { remote, shell } from 'electron'
 import * as fs from 'fs'
 
-const container = document.getElementById('app-container')
+const container = document.getElementById('app_container')
 
 export function saveImage(fileName: string): Promise<string> {
     return domtoimage.toBlob(container).then((blob: Blob) => {

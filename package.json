@@ -75,15 +75,15 @@
         "jscolor-picker": "^2.0.4",
         "path": "^0.12.7",
         "photonkit": "^0.1.2",
-        "tslib": "^1.8.1"
+        "tslib": "^1.9.0"
     },
     "devDependencies": {
         "@types/blob-to-buffer": "^1.2.0",
         "@types/electron-settings": "^3.1.1",
-        "electron-forge": "^4.1.6",
+        "electron-forge": "^4.2.0",
         "electron-prebuilt-compile": "1.7.9",
-        "prettier": "^1.9.2",
-        "tslint": "^5.8.0",
+        "prettier": "^1.10.2",
+        "tslint": "^5.9.1",
         "typescript": "^2.6.2"
     }
 }

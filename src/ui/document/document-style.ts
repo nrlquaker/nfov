@@ -1,4 +1,3 @@
-const body = document.getElementById('body')
 const container = document.getElementById('app_container')
 const styleSheet = document.styleSheets[0] as CSSStyleSheet
 const selectionRuleIndex = 0
@@ -11,7 +10,7 @@ export function setTextColor(textColor: string): void {
 }
 
 export function setBgColor(backgroundColor: string): void {
-    body!.style.backgroundColor = backgroundColor
+    document.body.style.backgroundColor = backgroundColor
     container!.style.backgroundColor = backgroundColor
 }
 

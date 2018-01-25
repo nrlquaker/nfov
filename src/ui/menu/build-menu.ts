@@ -51,7 +51,11 @@ export function buildMenu(): Electron.Menu {
         },
         {
             role: 'window',
-            submenu: [{ role: 'minimize' }, { role: 'close' }]
+            submenu: [
+                { role: 'minimize' },
+                { role: 'close' },
+                { label: 'Toggle Developer Tools', click: clicks.toggleDevTools() }
+            ]
         },
         {
             role: 'help',

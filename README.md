@@ -21,11 +21,13 @@ nfov is bundled with:
 
 ## Installation
 
-Can be easily installed with:
+Can be easily installed with [Homebrew](http://brew.sh):
 
 ```sh
 brew cask install nfov
 ```
+
+Alternatively, binaries are available in the [GitHub Releases](https://github.com/nrlquaker/nfov/releases)
 
 ## Screenshots
 

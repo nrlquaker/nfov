@@ -80,6 +80,7 @@
     "devDependencies": {
         "@types/blob-to-buffer": "^1.2.0",
         "@types/electron-settings": "^3.1.1",
+        "electron": "^1.7.9",
         "electron-forge": "^4.3.0",
         "electron-prebuilt-compile": "1.7.9",
         "prettier": "^1.10.2",

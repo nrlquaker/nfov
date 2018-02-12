@@ -22,7 +22,6 @@ cache:
 
 install:
 - npm install
-- npm install electron
 - npm install -g markdownlint-cli
 
 script:

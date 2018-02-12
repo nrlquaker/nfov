@@ -23,6 +23,7 @@ cache:
 install:
 - npm install
 - npm install -g markdownlint-cli
+- node_modules/electron/dist/Electron.app/Contents/MacOS/Electron --version
 
 script:
 - tslint --project tsconfig.json --type-check

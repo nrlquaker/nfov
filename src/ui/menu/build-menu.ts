@@ -1,7 +1,7 @@
 import { app, Menu } from 'electron'
 import * as clicks from './menu-clicks'
 
-export function buildMenu(): Electron.Menu {
+export function buildMenu(isDevMode: boolean): Electron.Menu {
     const template: Electron.MenuItemConstructorOptions[] = [
         {
             label: app.getName(),
@@ -54,7 +54,11 @@ export function buildMenu(): Electron.Menu {
             submenu: [
                 { role: 'minimize' },
                 { role: 'close' },
-                { label: 'Toggle Developer Tools', click: clicks.toggleDevTools() }
+                {
+                    label: 'Toggle Developer Tools',
+                    click: clicks.toggleDevTools(),
+                    visible: isDevMode
+                }
             ]
         },
         {

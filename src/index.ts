@@ -56,7 +56,7 @@ ipcMain.on('open-preferences', () => {
 })
 
 app.on('ready', () => {
-    Menu.setApplicationMenu(buildMenu())
+    Menu.setApplicationMenu(buildMenu(!!isDevMode))
     createMainWindow()
     createPreferencesWindow()
     app.on('open-file', (_, filePath) => {

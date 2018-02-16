@@ -1,4 +1,5 @@
 import { app, BrowserWindow, ipcMain, Menu } from 'electron'
+import { getBgColor } from './fs/storage'
 import { buildMenu } from './ui/menu/build-menu'
 
 const isDevMode = process.execPath.match(/[\\/]electron/)
@@ -11,7 +12,8 @@ function createMainWindow(): void {
         width: 600,
         height: 800,
         show: false,
-        zoomToPageWidth: true
+        zoomToPageWidth: true,
+        backgroundColor: getBgColor()
     })
     mainWindow.loadURL(`file://${__dirname}/index.html`)
     if (isDevMode) {

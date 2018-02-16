@@ -67,7 +67,7 @@
     "dependencies": {
         "anchorme": "^1.1.2",
         "blob-to-buffer": "^1.2.7",
-        "dom-to-image": "github:nrlquaker/dom-to-image",
+        "dom-to-image": "https://github.com/nrlquaker/dom-to-image/archive/2.6.1.tar.gz",
         "electron-compile": "^6.4.1",
         "electron-settings": "^3.1.4",
         "fs": "0.0.1-security",
@@ -81,10 +81,10 @@
         "@types/blob-to-buffer": "^1.2.0",
         "@types/electron-settings": "^3.1.1",
         "electron": "^1.8.2",
-        "electron-forge": "^5.1.0",
+        "electron-forge": "^5.1.1",
         "electron-prebuilt-compile": "1.8.2",
         "prettier": "^1.10.2",
         "tslint": "^5.9.1",
-        "typescript": "^2.7.1"
+        "typescript": "^2.7.2"
     }
 }

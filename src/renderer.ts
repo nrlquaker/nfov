@@ -12,9 +12,7 @@ ipcRenderer.on('open-file', (_: any, filePath: string) => {
     remote.app.addRecentDocument(filePath)
 })
 
-ipcRenderer.on('close-file', () => {
-    doc.close()
-})
+ipcRenderer.on('close-file', () => doc.close())
 
 ipcRenderer.on('export-to-png', (_: any, fileName: string) => {
     saveImage(fileName).then(() => remote.app.dock.downloadFinished(fileName))

@@ -1,40 +1,12 @@
-import { app, dialog, ipcMain, shell } from 'electron'
-import { basename } from 'path'
-import { supportedFiles } from '../settings/supported-files'
+import { ipcMain, shell } from 'electron'
 import { ClickHandler } from './click-handler'
 
-let lastOpenedFile: string
-
 export function openFile(): ClickHandler {
-    return (_, browserWindow) => {
-        dialog.showOpenDialog(
-            browserWindow,
-            {
-                filters: [{ name: 'nfo', extensions: supportedFiles }],
-                properties: ['openFile']
-            },
-            (filePaths: string[]) => {
-                if (!filePaths) return
-                lastOpenedFile = filePaths[0]
-                emit(browserWindow, 'open-file', filePaths[0])
-            }
-        )
-    }
+    return (_, browserWindow) => emit(browserWindow, 'show-open-dialog')
 }
 
 export function exportToPng(): ClickHandler {
-    return (_, browserWindow) => {
-        dialog.showSaveDialog(
-            browserWindow,
-            {
-                defaultPath: `${app.getPath('downloads')}/${basename(lastOpenedFile)}.png`
-            },
-            (fileName: string) => {
-                if (!fileName) return
-                emit(browserWindow, 'export-to-png', fileName)
-            }
-        )
-    }
+    return (_, browserWindow) => emit(browserWindow, 'show-export-dialog')
 }
 
 export function closeFile(): ClickHandler {

@@ -79,14 +79,8 @@ function updateSelectionColor(jscolor: string): void {
     ipcRenderer.send('selection-color-changed', '#' + jscolor)
 }
 
-ipcRenderer.on('close-file', (_: any) => {
-    ipcRenderer.send('close-file')
-})
+ipcRenderer.on('close-file', () => ipcRenderer.send('close-file'))
 
-ipcRenderer.on('open-file', (_: any, msg: string) => {
-    ipcRenderer.send('open-file', msg)
-})
+ipcRenderer.on('show-open-dialog', () => ipcRenderer.send('show-open-dialog'))
 
-ipcRenderer.on('export-to-png', (_: any, msg: string) => {
-    ipcRenderer.send('export-to-png', msg)
-})
+ipcRenderer.on('show-export-dialog', () => ipcRenderer.send('show-export-dialog'))

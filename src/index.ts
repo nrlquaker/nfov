@@ -1,11 +1,13 @@
 import { app, BrowserWindow, ipcMain, Menu } from 'electron'
 import { getBgColor } from './fs/storage'
 import { buildMenu } from './ui/menu/build-menu'
+import { showExportDialog, showOpenDialog } from './utils/dialogs'
 
 const isDevMode = process.execPath.match(/[\\/]electron/)
 let mainWindow: Electron.BrowserWindow | null = null
 let preferencesWindow: Electron.BrowserWindow | null = null
 let filePathToOpen: string
+let lastOpenedFile: string
 
 function createMainWindow(): void {
     mainWindow = new BrowserWindow({
@@ -106,8 +108,14 @@ ipcMain.on('open-file', (_: any, filePath: string) => {
     openFile(filePath)
 })
 
-ipcMain.on('export-to-png', (_: any, fileName: string) => {
-    mainWindow!.webContents.send('export-to-png', fileName)
+ipcMain.on('show-open-dialog', () => {
+    showOpenDialog(mainWindow!).then((fileName) => openFile(fileName))
+})
+
+ipcMain.on('show-export-dialog', () => {
+    showExportDialog(mainWindow!, lastOpenedFile).then((fileName) => {
+        mainWindow!.webContents.send('export-to-png', fileName)
+    })
 })
 
 ipcMain.on('close-file', () => {
@@ -115,5 +123,6 @@ ipcMain.on('close-file', () => {
 })
 
 function openFile(filePath: string): void {
+    lastOpenedFile = filePath
     mainWindow!.webContents.send('open-file', filePath)
 }

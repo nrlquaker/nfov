@@ -12,15 +12,19 @@ ipcRenderer.on('open-file', (_: any, filePath: string) => {
     remote.app.addRecentDocument(filePath)
 })
 
+ipcRenderer.on('show-open-dialog', () => ipcRenderer.send('show-open-dialog'))
+
+ipcRenderer.on('show-export-dialog', () => ipcRenderer.send('show-export-dialog'))
+
+ipcRenderer.on('export-to-png', () => ipcRenderer.send('export-to-png'))
+
 ipcRenderer.on('close-file', () => doc.close())
 
 ipcRenderer.on('export-to-png', (_: any, fileName: string) => {
     saveImage(fileName).then(() => remote.app.dock.downloadFinished(fileName))
 })
 
-ipcRenderer.on('open-preferences', () => {
-    ipcRenderer.send('open-preferences')
-})
+ipcRenderer.on('open-preferences', () => ipcRenderer.send('open-preferences'))
 
 ipcRenderer.on('bg-color-changed', (_: any, color: string) => {
     documentStyle.setBgColor(color)

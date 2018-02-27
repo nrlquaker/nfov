@@ -10,6 +10,7 @@ nfov is simple ASCII art viewer for macOS powered by [Electron](https://electron
 - nfo, diz, asc, txt support
 - ability to change font, font size, text and background color
 - ability to change selection and link color
+- ability to toggle font smoothing
 - clickable links
 - ability to save rendered png
 

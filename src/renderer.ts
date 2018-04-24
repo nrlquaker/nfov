@@ -5,11 +5,13 @@ import './ui/document/enable-drag-and-drop'
 import './ui/settings/window-settings'
 import { saveImage } from './utils/general-utils'
 
+const container = document.getElementById('app_container')!
 const doc = new Doc(remote.app.getName(), document)
 
 ipcRenderer.on('open-file', (_: any, filePath: string) => {
     doc.open(filePath)
     remote.app.addRecentDocument(filePath)
+    ipcRenderer.send('window-size-changed', container.clientWidth, container.clientHeight)
 })
 
 ipcRenderer.on('show-open-dialog', () => ipcRenderer.send('show-open-dialog'))

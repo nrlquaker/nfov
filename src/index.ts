@@ -2,6 +2,7 @@ import { app, BrowserWindow, ipcMain, Menu } from 'electron'
 import { getBgColor } from './fs/storage'
 import { buildMenu } from './ui/menu/build-menu'
 import { showExportDialog, showOpenDialog } from './utils/dialogs'
+import { calculateCenterFor } from './utils/general-utils'
 
 const isDevMode = process.execPath.match(/[\\/]electron/)
 let mainWindow: Electron.BrowserWindow | null = null
@@ -120,6 +121,12 @@ ipcMain.on('show-export-dialog', () => {
 
 ipcMain.on('close-file', () => {
     mainWindow!.webContents.send('close-file')
+})
+
+ipcMain.on('window-size-changed', (_: any, width: number, height: number) => {
+    mainWindow!.setContentSize(width, height, true)
+    const center = calculateCenterFor(mainWindow!.getSize())
+    mainWindow!.setPosition(center.x, center.y, true)
 })
 
 function openFile(filePath: string): void {

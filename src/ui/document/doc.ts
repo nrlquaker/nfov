@@ -36,7 +36,8 @@ export class Doc {
         this.document.title = title
     }
 
+    // Trim trailing spaces before newlines
     private setText(text: string): void {
-        this.container.innerHTML = text
+        this.container.innerHTML = text.replace(/[^\S\r\n]+$/gm, '')
     }
 }

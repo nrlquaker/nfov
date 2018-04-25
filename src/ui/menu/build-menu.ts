@@ -56,6 +56,7 @@ export function buildMenu(isDevMode: boolean): Electron.Menu {
                 { role: 'close' },
                 {
                     label: 'Toggle Developer Tools',
+                    accelerator: 'Cmd+I',
                     click: clicks.toggleDevTools(),
                     visible: isDevMode
                 }

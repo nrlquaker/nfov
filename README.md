@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/nrlquaker/nfov.svg?branch=master)](https://travis-ci.org/nrlquaker/nfov)
 ![Downloads count](https://img.shields.io/github/downloads/nrlquaker/nfov/total.svg)
 
-nfov is simple ASCII art viewer for macOS powered by [Electron](https://electron.atom.io)
+nfov is simple ASCII art viewer for macOS powered by [Electron](https://electronjs.org)
 
 ## Features
 

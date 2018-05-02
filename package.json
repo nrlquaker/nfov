@@ -66,7 +66,6 @@
     },
     "dependencies": {
         "anchorme": "^1.1.2",
-        "ansilove.js": "https://github.com/ansilove/ansilove.js",
         "blob-to-buffer": "^1.2.7",
         "dom-to-image": "https://github.com/nrlquaker/dom-to-image/archive/2.6.1.tar.gz",
         "electron-compile": "^6.4.1",
@@ -81,9 +80,9 @@
     "devDependencies": {
         "@types/blob-to-buffer": "^1.2.0",
         "@types/electron-settings": "^3.1.1",
-        "electron": "^1.8.4",
+        "electron": "^2.0.0",
         "electron-forge": "^5.2.0",
-        "electron-prebuilt-compile": "1.8.4",
+        "electron-prebuilt-compile": "2.0.0",
         "prettier": "^1.12.1",
         "tslint": "^5.9.1",
         "typescript": "^2.8.3"

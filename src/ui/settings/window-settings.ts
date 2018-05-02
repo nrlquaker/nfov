@@ -1,3 +1,3 @@
 import { webFrame } from 'electron'
 
-webFrame.setZoomLevelLimits(1, 1)
+webFrame.setVisualZoomLevelLimits(1, 1)

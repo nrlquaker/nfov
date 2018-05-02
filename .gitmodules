@@ -1,0 +1,3 @@
+[submodule "src/lib/ansilove.js"]
+	path = src/lib/ansilove.js
+	url = https://github.com/ansilove/ansilove.js

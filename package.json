@@ -48,7 +48,8 @@
                     "assets/icons/file_diz.icns",
                     "assets/icons/file_nfo.icns",
                     "assets/icons/file_asc.icns",
-                    "assets/icons/file_txt.icns"
+                    "assets/icons/file_txt.icns",
+                    "assets/icons/file_ans.icns"
                 ],
                 "ignore": [
                     ".vscode",

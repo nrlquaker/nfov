@@ -18,7 +18,7 @@ function createMainWindow(): void {
         zoomToPageWidth: true,
         backgroundColor: getBgColor()
     })
-    mainWindow.loadURL(`file://${__dirname}/index.html`)
+    mainWindow.loadFile('src/index.html')
     if (isDevMode) {
         mainWindow.webContents.openDevTools()
     }
@@ -44,7 +44,7 @@ function createPreferencesWindow(): void {
         maximizable: false,
         title: 'Preferences'
     })
-    preferencesWindow.loadURL(`file://${__dirname}/ui/preferences/preferences.html`)
+    preferencesWindow.loadFile('src/ui/preferences/preferences.html')
     preferencesWindow.on('close', (e: Electron.Event) => {
         if (preferencesWindow !== null) {
             e.preventDefault()
@@ -68,12 +68,16 @@ app.on('ready', () => {
 
 app.on('will-finish-launching', () => {
     app.once('open-file', (_, filePath) => {
-        app.on('ready', () => {
-            // Can't open file right away, because mainWindow is null
-            // at that point. Saving url and opening it in ready event
-            // causes the window size to be wrong.
-            setTimeout(() => openFile(filePath), 500)
-        })
+        if (app.isReady()) {
+            openFile(filePath)
+        } else {
+            app.once('ready', () => {
+                // Can't open file right away, because mainWindow is null
+                // at that point. Saving url and opening it in ready event
+                // causes the window size to be wrong.
+                setTimeout(() => openFile(filePath), 500)
+            })
+        }
     })
 })
 

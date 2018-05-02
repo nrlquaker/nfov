@@ -3,11 +3,11 @@
 [![Build Status](https://travis-ci.org/nrlquaker/nfov.svg?branch=master)](https://travis-ci.org/nrlquaker/nfov)
 ![Downloads count](https://img.shields.io/github/downloads/nrlquaker/nfov/total.svg)
 
-nfov is simple ASCII art viewer for macOS powered by [Electron](https://electronjs.org)
+nfov is ASCII / ANSI art viewer for macOS powered by [Electron](https://electronjs.org) and [ansilove.js](https://github.com/ansilove/ansilove.js)
 
 ## Features
 
-- nfo, diz, asc, txt support
+- nfo, diz, asc, txt, ans support
 - ability to change font, font size, text and background color
 - ability to change selection and link color
 - ability to toggle font smoothing
@@ -33,10 +33,19 @@ brew cask install nfov
 
 Alternatively, binaries are available in the [GitHub Releases](https://github.com/nrlquaker/nfov/releases)
 
+## Build from source
+
+```sh
+git submodule update --init --recursive
+npm install
+npm run make
+```
+
 ## Screenshots
 
 ![nfov screenshot](./screenshots/crude.nfo.png)
 ![nfov screenshot](./screenshots/flt-1000.nfo.png)
+![nfov screenshot](./screenshots/cl!-al02.ans.png)
 
 ## Similar apps
 

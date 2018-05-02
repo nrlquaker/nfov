@@ -68,16 +68,12 @@ app.on('ready', () => {
 
 app.on('will-finish-launching', () => {
     app.once('open-file', (_, filePath) => {
-        if (app.isReady()) {
-            openFile(filePath)
-        } else {
-            app.once('ready', () => {
-                // Can't open file right away, because mainWindow is null
-                // at that point. Saving url and opening it in ready event
-                // causes the window size to be wrong.
-                setTimeout(() => openFile(filePath), 500)
-            })
-        }
+        app.once('ready', () => {
+            // Can't open file right away, because mainWindow is null
+            // at that point. Saving url and opening it in ready event
+            // causes the window size to be wrong.
+            setTimeout(() => openFile(filePath), 500)
+        })
     })
 })
 

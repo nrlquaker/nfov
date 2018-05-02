@@ -83,6 +83,7 @@
         "electron": "^2.0.0",
         "electron-forge": "^5.2.0",
         "electron-prebuilt-compile": "2.0.0",
+        "markdownlint-cli": "^0.8.1",
         "prettier": "^1.12.1",
         "tslint": "^5.9.1",
         "typescript": "^2.8.3"

@@ -54,12 +54,7 @@ export default function buildMenu(isDevMode: boolean): Electron.Menu {
             submenu: [
                 { role: 'minimize' },
                 { role: 'close' },
-                {
-                    label: 'Toggle Developer Tools',
-                    accelerator: 'Cmd+I',
-                    click: clicks.toggleDevTools(),
-                    visible: isDevMode
-                }
+                { role: 'toggledevtools', accelerator: 'Cmd+I', visible: isDevMode }
             ]
         },
         {

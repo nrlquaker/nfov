@@ -64,6 +64,21 @@
 				<key>LSHandlerRank</key>
 				<string>Default</string>
 			</dict>
+            <dict>
+				<key>CFBundleTypeExtensions</key>
+				<array>
+					<string>ans</string>
+					<string>ANS</string>
+				</array>
+				<key>CFBundleTypeIconFile</key>
+				<string>file_ans.icns</string>
+				<key>CFBundleTypeName</key>
+				<string>ANSI Artwork</string>
+				<key>CFBundleTypeRole</key>
+				<string>Viewer</string>
+				<key>LSHandlerRank</key>
+				<string>Default</string>
+			</dict>
 		</array>
 	</dict>
 </plist>

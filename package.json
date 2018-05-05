@@ -10,7 +10,7 @@
         "type": "git",
         "url": "git+https://github.com/nrlquaker/nfov.git"
     },
-    "main": "src/index.ts",
+    "main": "src/main.ts",
     "scripts": {
         "start": "electron-forge start",
         "package": "electron-forge package",
@@ -58,8 +58,7 @@
                     ".vscode",
                     "assets/icons",
                     "assets/Info.plist",
-                    "screenshots",
-                    "node_modules/photonkit/docs"
+                    "screenshots"
                 ]
             },
             "github_repository": {
@@ -72,20 +71,29 @@
         "anchorme": "^1.1.2",
         "blob-to-buffer": "^1.2.7",
         "dom-to-image": "https://github.com/nrlquaker/dom-to-image/archive/2.6.1.tar.gz",
-        "electron-compile": "^6.4.1",
+        "electron-compile": "^6.4.2",
+        "electron-devtools-installer": "^2.2.4",
         "electron-settings": "^3.1.4",
         "fs": "0.0.1-security",
-        "iconv-lite": "^0.4.21",
-        "jscolor-picker": "^2.0.4",
+        "iconv-lite": "^0.4.22",
         "path": "^0.12.7",
-        "photonkit": "^0.1.2",
+        "react": "^16.3.2",
+        "react-color": "^2.14.1",
+        "react-desktop": "^0.3.5",
+        "react-dom": "^16.3.2",
+        "react-hot-loader": "^4.2.0",
         "tslib": "^1.9.0"
     },
     "devDependencies": {
         "@types/blob-to-buffer": "^1.2.0",
+        "@types/electron-devtools-installer": "^2.0.3",
         "@types/electron-settings": "^3.1.1",
+        "@types/react": "^16.3.14",
+        "@types/react-color": "^2.13.5",
+        "@types/react-dom": "^16.0.5",
+        "@types/reactcss": "^1.2.2",
         "electron": "^1.8.4",
-        "electron-forge": "^5.2.0",
+        "electron-forge": "^5.2.2",
         "electron-prebuilt-compile": "1.8.4",
         "markdownlint-cli": "^0.8.1",
         "prettier": "^1.12.1",

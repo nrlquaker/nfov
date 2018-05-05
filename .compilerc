@@ -1,0 +1,22 @@
+{
+  "env": {
+    "development": {
+      "text/typescript": {
+        "declaration": true,
+        "inlineSourceMap": true,
+        "inlineSources": true,
+        "target": "es2016",
+        "module": "commonjs",
+        "jsx": "react"
+      }
+    },
+    "production": {
+      "text/typescript": {
+        "declaration": false,
+        "sourceMap": false,
+        "target": "es2016",
+        "jsx": "react"
+      }
+    }
+  }
+}

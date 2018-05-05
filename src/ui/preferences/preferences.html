@@ -1,91 +1,15 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <link rel="stylesheet" href="../../../node_modules/photonkit/dist/css/photon.css">
-  <link rel="stylesheet" href="preferences.css">
-  <script src="../../../node_modules/jscolor-picker/jscolor.min.js"></script>
-</head>
-
-<body>
-  <div class="window">
-    <header class="toolbar toolbar-header draggable">
-      <h1 class="title">Preferences</h1>
-    </header>
-    <div class="window-content">
-      <div class="padded-more">
-        <form>
-          <label>Font:</label>
-          <select id="font_selector" name="font" class="form-control">
-            <option>BlockZone</option>
-            <option>ProFontWindows</option>
-            <option>Px437 AmstradPC1512-2y</option>
-            <option>Px437 ATI 8x14</option>
-            <option>Px437 ATI 8x16</option>
-            <option>Px437 ATI 8x8-2y</option>
-            <option>Px437 CompaqThin 8x16</option>
-            <option>Px437 IBM BIOS-2y</option>
-            <option>Px437 IBM CGAthin-2y</option>
-            <option>Px437 IBM Conv-2y</option>
-            <option>Px437 IBM ISO8</option>
-            <option>Px437 IBM MDA</option>
-            <option>Px437 IBM PS/2thin1</option>
-            <option>Px437 IBM PS/2thin2</option>
-            <option>Px437 IBM PS/2thin3</option>
-            <option>Px437 IBM PS/2thin4</option>
-            <option>Px437 IBM VGA8</option>
-            <option>Px437 IBM VGA9</option>
-            <option>Px437 TandyNew TV-2y</option>
-            <option>Px437 TandyOld TV-2y</option>
-            <option>Px437 Verite 8x16</option>
-            <option>Px437 Verite 8x8-2y</option>
-            <option>Px437 VGA SquarePx</option>
-            <option>Px437 Wyse700a-2y</option>
-            <option>Px437 Wyse700b-2y</option>
-            <option>PxPlus IBM CGAthin-2y</option>
-            <option>PT Mono</option>
-          </select>
-          <label>Font size:</label>
-          <select id="font_size_selector" name="font_size" class="form-control">
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-            <option>13</option>
-            <option>14</option>
-            <option>15</option>
-            <option>16</option>
-            <option>17</option>
-            <option>18</option>
-            <option>19</option>
-            <option>20</option>
-          </select>
-          <div class="checkbox">
-            <label>
-              <input id="font_smoothing_cb" type="checkbox"> Font smoothing
-            </label>
-          </div>
-          <div class="cp">Text color:
-            <input id="cp_text" class="jscolor {hash:true, onFineChange:'updateTextColor(this)'}">
-          </div>
-          <div class="cp">Background color:
-            <input id="cp_bg" input class="jscolor {hash:true, onFineChange:'updateBgColor(this)'}">
-          </div>
-          <div class="cp">Link color:
-            <input id="cp_link" input class="jscolor {hash:true, onFineChange:'updateLinkColor(this)'}">
-          </div>
-          <div class="cp">Selection color:
-            <input id="cp_selection" input class="jscolor {hash:true, onFineChange:'updateSelectionColor(this)'}">
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</body>
-
-<script>
-  window.exports = module.exports
-</script>
-<script src="preferences.ts" />
-
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../base.css">
+  </head>
+  <body>
+    <div id="container" background-color="#C169A4"></div>
+  </body>
+  <script>
+    window.exports = module.exports
+  </script>
+  <script type="text/javascript" src="preferences.tsx"></script>
+<script src="preferences-renderer.ts" />
 </html>

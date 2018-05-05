@@ -17,7 +17,7 @@ export default function buildMenu(isDevMode: boolean): Electron.Menu {
                 { role: 'services', submenu: [] },
                 { type: 'separator' },
                 { role: 'hide' },
-                { role: 'hideOthers' },
+                { role: 'hideothers' },
                 { role: 'unhide' },
                 { type: 'separator' },
                 { role: 'quit' }
@@ -30,10 +30,6 @@ export default function buildMenu(isDevMode: boolean): Electron.Menu {
                     label: 'Open...',
                     accelerator: 'Cmd+O',
                     click: clicks.openFile()
-                },
-                {
-                    role: 'recentDocuments',
-                    submenu: [{ role: 'clearRecentDocuments' }]
                 },
                 {
                     label: 'Export to png...',
@@ -51,14 +47,14 @@ export default function buildMenu(isDevMode: boolean): Electron.Menu {
         },
         {
             label: 'Edit',
-            submenu: [{ role: 'copy' }, { role: 'selectAll' }]
+            submenu: [{ role: 'copy' }, { role: 'selectall' }]
         },
         {
             role: 'window',
             submenu: [
                 { role: 'minimize' },
                 { role: 'close' },
-                { role: 'toggleDevTools', accelerator: 'Cmd+I', visible: isDevMode }
+                { role: 'toggledevtools', accelerator: 'Cmd+I', visible: isDevMode }
             ]
         },
         {

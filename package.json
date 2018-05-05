@@ -81,9 +81,9 @@
     "devDependencies": {
         "@types/blob-to-buffer": "^1.2.0",
         "@types/electron-settings": "^3.1.1",
-        "electron": "^2.0.0",
+        "electron": "^1.8.4",
         "electron-forge": "^5.2.0",
-        "electron-prebuilt-compile": "2.0.0",
+        "electron-prebuilt-compile": "1.8.4",
         "markdownlint-cli": "^0.8.1",
         "prettier": "^1.12.1",
         "tslint": "^5.9.1",

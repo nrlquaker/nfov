@@ -27,8 +27,8 @@ export function openLinksInExternalBrowser(): void {
 
 export function setFileMenuItemsEnable(enable: boolean): void {
     const menu = remote.Menu.getApplicationMenu()
+    menu!.items[1].submenu!.items[1].enabled = enable
     menu!.items[1].submenu!.items[2].enabled = enable
-    menu!.items[1].submenu!.items[3].enabled = enable
 }
 
 export function calculateCenterFor(windowSize: number[]): Point {

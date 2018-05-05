@@ -18,7 +18,7 @@ function createMainWindow(): void {
         zoomToPageWidth: true,
         backgroundColor: getBgColor()
     })
-    mainWindow.loadFile('src/index.html')
+    mainWindow.loadURL(`file://${__dirname}/index.html`)
     if (isDevMode) {
         mainWindow.webContents.openDevTools()
     }
@@ -44,7 +44,7 @@ function createPreferencesWindow(): void {
         maximizable: false,
         title: 'Preferences'
     })
-    preferencesWindow.loadFile('src/ui/preferences/preferences.html')
+    preferencesWindow.loadURL(`file://${__dirname}/ui/preferences/preferences.html`)
     preferencesWindow.on('close', (e: Electron.Event) => {
         if (preferencesWindow !== null) {
             e.preventDefault()

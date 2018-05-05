@@ -12,6 +12,7 @@ export default class AnsiRenderer implements DocumentRenderer {
             this.ansiContainer.style.width = canvases[0].style.width
             canvases.forEach((canvas: HTMLCanvasElement) => {
                 canvas.style.verticalAlign = 'bottom'
+                canvas.style.display = 'block'
                 this.ansiContainer.appendChild(canvas)
             })
             ipcRenderer.send(

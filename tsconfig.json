@@ -17,7 +17,8 @@
         "noFallthroughCasesInSwitch": true,
         "preserveConstEnums": true,
         "moduleResolution": "node",
-        "pretty": true
+        "pretty": true,
+        "jsx": "react"
     },
     "formatCodeOptions": {
         "indentSize": 2,

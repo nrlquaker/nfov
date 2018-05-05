@@ -47,7 +47,7 @@ export default function buildMenu(isDevMode: boolean): Electron.Menu {
         },
         {
             label: 'Edit',
-            submenu: [{ role: 'copy' }, { role: 'selectall' }]
+            submenu: [{ role: 'copy' }, { role: 'paste' }, { role: 'selectall' }]
         },
         {
             role: 'window',

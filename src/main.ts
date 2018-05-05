@@ -1,4 +1,6 @@
 import { app, BrowserWindow, ipcMain, Menu } from 'electron'
+import { enableLiveReload } from 'electron-compile'
+import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer'
 import './compile/bypass-checker'
 import { getBgColor } from './fs/storage'
 import buildMenu from './ui/menu/build-menu'
@@ -10,17 +12,22 @@ let mainWindow: Electron.BrowserWindow | null = null
 let preferencesWindow: Electron.BrowserWindow | null = null
 let lastOpenedFile: string
 
-function createMainWindow(): void {
+if (isDevMode) {
+    enableLiveReload({ strategy: 'react-hmr' })
+}
+
+async function createMainWindow(): Promise<void> {
     mainWindow = new BrowserWindow({
         width: 600,
         height: 800,
-        show: false,
-        zoomToPageWidth: true,
         backgroundColor: getBgColor(),
-        resizable: false
+        resizable: false,
+        zoomToPageWidth: true,
+        show: false,
     })
     mainWindow.loadURL(`file://${__dirname}/index.html`)
     if (isDevMode) {
+        await installExtension(REACT_DEVELOPER_TOOLS)
         mainWindow.webContents.openDevTools()
     }
     mainWindow.on('ready-to-show', () => {
@@ -35,15 +42,13 @@ function createMainWindow(): void {
 
 function createPreferencesWindow(): void {
     preferencesWindow = new BrowserWindow({
-        width: 370,
-        height: 280,
-        frame: false,
-        show: false,
-        titleBarStyle: 'hidden',
-        movable: true,
+        title: 'Preferences',
+        width: 350,
+        height: 315,
+        backgroundColor: '#ECECEC',
         resizable: false,
         maximizable: false,
-        title: 'Preferences'
+        show: false
     })
     preferencesWindow.loadURL(`file://${__dirname}/ui/preferences/preferences.html`)
     preferencesWindow.on('close', (e: Electron.Event) => {

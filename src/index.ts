@@ -3,7 +3,7 @@ import './compile/bypass-checker'
 import { getBgColor } from './fs/storage'
 import buildMenu from './ui/menu/build-menu'
 import { showExportDialog, showOpenDialog } from './utils/dialogs'
-import { calculateCenterFor } from './utils/general-utils'
+import { calculateWindowPositionFor } from './utils/screen-utils'
 
 const isDevMode = process.execPath.match(/[\\/]electron/)
 let mainWindow: Electron.BrowserWindow | null = null
@@ -16,7 +16,8 @@ function createMainWindow(): void {
         height: 800,
         show: false,
         zoomToPageWidth: true,
-        backgroundColor: getBgColor()
+        backgroundColor: getBgColor(),
+        resizable: false
     })
     mainWindow.loadURL(`file://${__dirname}/index.html`)
     if (isDevMode) {
@@ -126,9 +127,9 @@ ipcMain.on('close-file', () => {
 })
 
 ipcMain.on('window-size-changed', (_: any, width: number, height: number) => {
-    mainWindow!.setContentSize(width, height, true)
-    const center = calculateCenterFor(mainWindow!.getSize())
-    mainWindow!.setPosition(center.x, center.y, true)
+    const rect = calculateWindowPositionFor(width, height)
+    mainWindow!.setContentSize(rect.width, rect.height, true)
+    mainWindow!.setPosition(rect.x, rect.y, true)
 })
 
 function openFile(filePath: string): void {

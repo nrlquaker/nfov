@@ -1,7 +1,7 @@
 {
     "name": "nfov",
     "productName": "nfov",
-    "version": "1.0.7",
+    "version": "1.1.0",
     "description": "ASCII / ANSI art viewer for macOS powered by Electron",
     "os": [
         "darwin"

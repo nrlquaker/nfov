@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { HTMLAttributes } from 'react'
-import { ColorResult } from 'react-color'
-import ChromePicker from 'react-color/lib/components/chrome/Chrome'
+import { ChromePicker, ColorResult } from 'react-color'
 
 export interface ColorPickerProps {
     onChange?: (color: any) => void
@@ -13,7 +12,6 @@ export interface ColorPickerState {
     color?: string
 }
 
-// TODO organize css
 export default class ColorPicker extends React.Component<ColorPickerProps, ColorPickerState> {
     private node: HTMLDivElement | null = null
 

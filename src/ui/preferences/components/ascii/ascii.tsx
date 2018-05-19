@@ -1,6 +1,6 @@
 import { ipcRenderer } from 'electron'
 import * as React from 'react'
-import { HTMLAttributes } from 'react'
+import { Component, HTMLAttributes } from 'react'
 // @ts-ignore: no type definition
 import { Label, Window } from 'react-desktop/macOs'
 import * as storage from '../../../../fs/storage'
@@ -9,7 +9,7 @@ import FontNameSelection from './font-name-selection'
 import FontSizeSelection from './font-size-selection'
 import FontSmoothingCheckbox from './font-smoothing-checkbox'
 
-export default class ASCII extends React.Component {
+export default class ASCII extends Component {
     public render(): JSX.Element {
         const divStyle = {
             display: 'flex',

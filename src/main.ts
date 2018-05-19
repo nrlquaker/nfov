@@ -2,7 +2,7 @@ import { app, BrowserWindow, ipcMain, Menu } from 'electron'
 import { enableLiveReload } from 'electron-compile'
 import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer'
 import './compile/bypass-checker'
-import { getBgColor } from './fs/storage'
+import { getBgColor, getWindowCentering } from './fs/storage'
 import buildMenu from './ui/menu/build-menu'
 import { showExportDialog, showOpenDialog } from './utils/dialogs'
 import { calculateWindowPositionFor } from './utils/screen-utils'
@@ -134,7 +134,9 @@ ipcMain.on('close-file', () => {
 ipcMain.on('window-size-changed', (_: any, width: number, height: number) => {
     const rect = calculateWindowPositionFor(width, height)
     mainWindow!.setContentSize(rect.width, rect.height, true)
-    mainWindow!.setPosition(rect.x, rect.y, true)
+    if (getWindowCentering()) {
+        mainWindow!.setPosition(rect.x, rect.y, true)
+    }
 })
 
 function openFile(filePath: string): void {

@@ -43,7 +43,7 @@
                 ]
             },
             "electronPackagerConfig": {
-                "asar" : true,
+                "asar": true,
                 "packageManager": "npm",
                 "icon": "assets/icons/icon.icns",
                 "appCategoryType": "public.app-category.utilities",
@@ -74,16 +74,16 @@
         "dom-to-image": "https://github.com/nrlquaker/dom-to-image/archive/2.6.1.tar.gz",
         "electron-compile": "^6.4.2",
         "electron-devtools-installer": "^2.2.4",
-        "electron-settings": "^3.1.4",
+        "electron-settings": "^3.2.0",
         "fs": "0.0.1-security",
-        "iconv-lite": "^0.4.22",
+        "iconv-lite": "^0.4.23",
         "path": "^0.12.7",
         "react": "^16.3.2",
         "react-color": "^2.14.1",
         "react-desktop": "^0.3.5",
         "react-dom": "^16.3.2",
         "react-hot-loader": "^4.2.0",
-        "tslib": "^1.9.0"
+        "tslib": "^1.9.1"
     },
     "devDependencies": {
         "@types/blob-to-buffer": "^1.2.0",
@@ -96,7 +96,7 @@
         "electron": "^1.8.4",
         "electron-forge": "^5.2.2",
         "electron-prebuilt-compile": "1.8.4",
-        "markdownlint-cli": "^0.8.1",
+        "markdownlint-cli": "^0.8.2",
         "prettier": "^1.12.1",
         "tslint": "^5.9.1",
         "typescript": "^2.8.3"

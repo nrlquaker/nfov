@@ -43,6 +43,7 @@
                 ]
             },
             "electronPackagerConfig": {
+                "asar" : true,
                 "packageManager": "npm",
                 "icon": "assets/icons/icon.icns",
                 "appCategoryType": "public.app-category.utilities",

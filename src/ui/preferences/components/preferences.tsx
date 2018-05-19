@@ -3,6 +3,7 @@ import { Component, Props } from 'react'
 // @ts-ignore: no type definition
 import { SegmentedControl, SegmentedControlItem, Text, Window } from 'react-desktop/macOs'
 import ASCII from './ascii/ascii'
+import General from './general'
 
 export interface PreferencesState {
     selected: number
@@ -25,7 +26,7 @@ export class Preferences extends Component<Props<string>, PreferencesState> {
     private renderItems(): JSX.Element[] {
         return [
             this.renderItem(1, 'ASCII', <ASCII />),
-            this.renderItem(2, 'General', <Text>To be added...</Text>)
+            this.renderItem(2, 'General', <General />)
         ]
     }
 

@@ -55,5 +55,13 @@ export function setFontSmoothing(enabled: boolean): void {
 }
 
 export function getFontSmoothing(): boolean {
-    return settings.get('font-smoothing', 'true', options) as boolean
+    return settings.get('font-smoothing', true, options) as boolean
+}
+
+export function setWindowCentering(enabled: boolean): void {
+    settings.set('window-centering', enabled, options)
+}
+
+export function getWindowCentering(): boolean {
+    return settings.get('window-centering', true, options) as boolean
 }

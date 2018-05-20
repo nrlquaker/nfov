@@ -1,4 +1,5 @@
-import { getBgColor } from '../../fs/storage'
+import { ipcRenderer } from 'electron'
+import * as storage from '../../fs/storage'
 import { detectFileType, FileType } from '../settings/supported-files'
 import { setBgColor } from './ascii-document-style'
 
@@ -8,6 +9,7 @@ export default class DocumentMode {
 
     constructor() {
         this.setAsciMode()
+        this.updateColors()
     }
 
     public setModeFor(extension: string): void {
@@ -28,8 +30,17 @@ export default class DocumentMode {
     }
 
     private setAsciMode(): void {
-        setBgColor(getBgColor())
+        setBgColor(storage.getBgColor())
         this.ansiContainer.style.display = 'none'
         this.asciiContainer.style.display = 'inline-block'
+    }
+
+    private updateColors(): void {
+        ipcRenderer.send('text-color-changed', storage.getTextColor())
+        ipcRenderer.send('link-color-changed', storage.getLinkColor())
+        ipcRenderer.send('selection-color-changed', storage.getSelectionColor())
+        ipcRenderer.send('font-changed', storage.getFontName())
+        ipcRenderer.send('font-size-changed', storage.getFontSize())
+        ipcRenderer.send('font-smooting-changed', storage.getFontSmoothing())
     }
 }

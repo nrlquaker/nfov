@@ -25,8 +25,8 @@ export class Preferences extends Component<Props<string>, PreferencesState> {
 
     private renderItems(): JSX.Element[] {
         return [
-            this.renderItem(1, 'ASCII', <ASCII />),
-            this.renderItem(2, 'General', <General />)
+            this.renderItem(1, 'General', <General />),
+            this.renderItem(2, 'ASCII', <ASCII />)
         ]
     }
 

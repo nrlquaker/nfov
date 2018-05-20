@@ -16,13 +16,10 @@ export default class FontSizeSelection extends React.Component {
             paddingRight: '6px'
         }
 
-        const fontSize = getFontSize()
-        ipcRenderer.send('font-size-changed', fontSize)
-
         return (
             <div style={divStyle}>
                 <Label style={labelStyle}>Font size:</Label>
-                <select defaultValue={fontSize} onChange={this.handleChange}>
+                <select defaultValue={getFontSize()} onChange={this.handleChange}>
                     {this.renderItems()}
                 </select>
             </div>

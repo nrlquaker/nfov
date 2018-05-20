@@ -16,12 +16,10 @@ export default class FontNameSelection extends React.Component {
             paddingRight: '6px'
         }
 
-        const fontName = getFontName()
-        ipcRenderer.send('font-changed', fontName)
         return (
             <div style={divStyle}>
                 <Label style={labelStyle}>Font:</Label>
-                <select defaultValue={fontName} onChange={this.handleChange}>
+                <select defaultValue={getFontName()} onChange={this.handleChange}>
                     <option>BlockZone</option>
                     <option>ProFontWindows</option>
                     <option>Px437 AmstradPC1512-2y</option>

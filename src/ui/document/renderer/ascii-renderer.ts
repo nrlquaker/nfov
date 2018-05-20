@@ -11,9 +11,8 @@ export default class AsciiRenderer implements DocumentRenderer {
     private asciiContainer = document.getElementById('ascii_container')!
 
     public render(filePath: string): void {
-        this.setText(anchorme(loadFile(filePath), anchormeOptions))
-        setLinkColor(storage.getLinkColor())
-        openLinksInExternalBrowser()
+        this.setText(this.loadText(filePath))
+        this.updateLinksHighlighting()
         this.asciiContainer.scrollIntoView()
         ipcRenderer.send(
             'window-size-changed',
@@ -25,5 +24,20 @@ export default class AsciiRenderer implements DocumentRenderer {
     // Trim trailing spaces before newlines
     private setText(text: string): void {
         this.asciiContainer.innerHTML = text.replace(/[^\S\r\n]+$/gm, '')
+    }
+
+    private loadText(filePath: string): string {
+        let text = loadFile(filePath)
+        if (storage.getLinksHighlighting()) {
+            text = anchorme(text, anchormeOptions)
+        }
+        return text
+    }
+
+    private updateLinksHighlighting(): void {
+        if (storage.getLinksHighlighting()) {
+            setLinkColor(storage.getLinkColor())
+            openLinksInExternalBrowser()
+        }
     }
 }

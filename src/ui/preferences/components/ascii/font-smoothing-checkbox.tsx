@@ -11,15 +11,12 @@ export default class FontSmoothingCheckbox extends React.Component {
             padding: '4px 0'
         }
 
-        const fontSmoothing = getFontSmoothing()
-        ipcRenderer.send('font-smooting-changed', fontSmoothing)
-
         return (
             <div style={divStyle}>
                 <Checkbox
                     label='Font smoothing'
                     onChange={this.handleChange}
-                    defaultChecked={fontSmoothing} />
+                    defaultChecked={getFontSmoothing()} />
             </div>
         )
     }

@@ -39,8 +39,9 @@ export default class ColorPicker extends React.Component<ColorPickerProps, Color
                 borderRadius: '2px',
                 background: this.state.color,
                 position: 'absolute',
-                top: '10px',
-                left: '40px'
+                top: '25px',
+                left: '52.5px',
+                zIndex: '999'
             } as HTMLAttributes<HTMLDivElement>,
             swatcthColor: {
                 width: '36px',

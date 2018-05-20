@@ -53,3 +53,7 @@ ipcRenderer.on('font-size-changed', (_: any, fontSize: string) => {
 ipcRenderer.on('font-smooting-changed', (_: any, enabled: boolean) => {
     asciiDocumentStyle.enableFontSmoothing(enabled)
 })
+
+ipcRenderer.on('links-highlighting-changed', (_: any, enabled: boolean) => {
+    asciiDocumentStyle.enableLinksHighlighting(enabled)
+})

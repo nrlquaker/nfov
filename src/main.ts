@@ -43,8 +43,8 @@ async function createMainWindow(): Promise<void> {
 function createPreferencesWindow(): void {
     preferencesWindow = new BrowserWindow({
         title: 'Preferences',
-        width: 350,
-        height: 315,
+        width: 375,
+        height: 342,
         backgroundColor: '#ECECEC',
         resizable: false,
         maximizable: false,
@@ -111,6 +111,10 @@ ipcMain.on('font-size-changed', (_: any, fontSize: string) => {
 
 ipcMain.on('font-smooting-changed', (_: any, enabled: boolean) => {
     mainWindow!.webContents.send('font-smooting-changed', enabled)
+})
+
+ipcMain.on('links-highlighting-changed', (_: any, enabled: boolean) => {
+    mainWindow!.webContents.send('links-highlighting-changed', enabled)
 })
 
 ipcMain.on('open-file', (_: any, filePath: string) => {

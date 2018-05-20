@@ -65,3 +65,11 @@ export function setWindowCentering(enabled: boolean): void {
 export function getWindowCentering(): boolean {
     return settings.get('window-centering', true, options) as boolean
 }
+
+export function setLinksHighlighting(enabled: boolean): void {
+    settings.set('links-highlighting', enabled, options)
+}
+
+export function getLinksHighlighting(): boolean {
+    return settings.get('links-highlighting', true, options) as boolean
+}

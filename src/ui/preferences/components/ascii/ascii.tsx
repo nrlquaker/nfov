@@ -2,12 +2,13 @@ import { ipcRenderer } from 'electron'
 import * as React from 'react'
 import { Component, HTMLAttributes } from 'react'
 // @ts-ignore: no type definition
-import { Label, Window } from 'react-desktop/macOs'
+import { Label } from 'react-desktop/macOs'
 import * as storage from '../../../../fs/storage'
 import ColorPicker from './color-picker'
 import FontNameSelection from './font-name-selection'
 import FontSizeSelection from './font-size-selection'
 import FontSmoothingCheckbox from './font-smoothing-checkbox'
+import LinkHighlightingCheckbox from './link-highlighting-checkbox'
 
 export default class ASCII extends Component {
     public render(): JSX.Element {
@@ -53,6 +54,7 @@ export default class ASCII extends Component {
                         color={storage.getSelectionColor()}
                         onChange={this.updateSelectionColor} />
                 </div>
+                <LinkHighlightingCheckbox />
             </div>
         )
     }

@@ -79,6 +79,126 @@
 				<key>LSHandlerRank</key>
 				<string>Default</string>
 			</dict>
+            <dict>
+				<key>CFBundleTypeExtensions</key>
+				<array>
+					<string>cia</string>
+					<string>CIA</string>
+				</array>
+				<key>CFBundleTypeIconFile</key>
+				<string>file_cia.icns</string>
+				<key>CFBundleTypeName</key>
+				<string>ANSI Artwork</string>
+				<key>CFBundleTypeRole</key>
+				<string>Viewer</string>
+				<key>LSHandlerRank</key>
+				<string>Default</string>
+			</dict>
+            <dict>
+				<key>CFBundleTypeExtensions</key>
+				<array>
+					<string>ice</string>
+					<string>ICE</string>
+				</array>
+				<key>CFBundleTypeIconFile</key>
+				<string>file_ice.icns</string>
+				<key>CFBundleTypeName</key>
+				<string>ANSI Artwork</string>
+				<key>CFBundleTypeRole</key>
+				<string>Viewer</string>
+				<key>LSHandlerRank</key>
+				<string>Default</string>
+			</dict>
+            <dict>
+				<key>CFBundleTypeExtensions</key>
+				<array>
+					<string>xb</string>
+					<string>XB</string>
+				</array>
+				<key>CFBundleTypeIconFile</key>
+				<string>file_xb.icns</string>
+				<key>CFBundleTypeName</key>
+				<string>eXtended Binary</string>
+				<key>CFBundleTypeRole</key>
+				<string>Viewer</string>
+				<key>LSHandlerRank</key>
+				<string>Default</string>
+			</dict>
+            <dict>
+				<key>CFBundleTypeExtensions</key>
+				<array>
+					<string>pcb</string>
+					<string>PCB</string>
+				</array>
+				<key>CFBundleTypeIconFile</key>
+				<string>file_pcb.icns</string>
+				<key>CFBundleTypeName</key>
+				<string>PCBoard BBS File</string>
+				<key>CFBundleTypeRole</key>
+				<string>Viewer</string>
+				<key>LSHandlerRank</key>
+				<string>Default</string>
+			</dict>
+            <dict>
+				<key>CFBundleTypeExtensions</key>
+				<array>
+					<string>bin</string>
+					<string>BIN</string>
+				</array>
+				<key>CFBundleTypeIconFile</key>
+				<string>file_bin.icns</string>
+				<key>CFBundleTypeName</key>
+				<string>Binary ANSi Artwork</string>
+				<key>CFBundleTypeRole</key>
+				<string>Viewer</string>
+				<key>LSHandlerRank</key>
+				<string>Default</string>
+			</dict>
+            <dict>
+				<key>CFBundleTypeExtensions</key>
+				<array>
+					<string>tnd</string>
+					<string>TND</string>
+				</array>
+				<key>CFBundleTypeIconFile</key>
+				<string>file_tnd.icns</string>
+				<key>CFBundleTypeName</key>
+				<string>Tundra Draw File</string>
+				<key>CFBundleTypeRole</key>
+				<string>Viewer</string>
+				<key>LSHandlerRank</key>
+				<string>Default</string>
+			</dict>
+            <dict>
+				<key>CFBundleTypeExtensions</key>
+				<array>
+					<string>idf</string>
+					<string>IDF</string>
+				</array>
+				<key>CFBundleTypeIconFile</key>
+				<string>file_idf.icns</string>
+				<key>CFBundleTypeName</key>
+				<string>iCE Draw File</string>
+				<key>CFBundleTypeRole</key>
+				<string>Viewer</string>
+				<key>LSHandlerRank</key>
+				<string>Default</string>
+			</dict>
+            <dict>
+				<key>CFBundleTypeExtensions</key>
+				<array>
+					<string>adf</string>
+					<string>ADF</string>
+				</array>
+				<key>CFBundleTypeIconFile</key>
+				<string>file_adf.icns</string>
+				<key>CFBundleTypeName</key>
+				<string>ArtWorx Data File</string>
+				<key>CFBundleTypeRole</key>
+				<string>Viewer</string>
+				<key>LSHandlerRank</key>
+				<string>Default</string>
+			</dict>
 		</array>
 	</dict>
 </plist>

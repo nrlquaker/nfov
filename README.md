@@ -7,7 +7,7 @@ nfov is ASCII / ANSI art viewer for macOS powered by [Electron](https://electron
 
 ## Features
 
-- nfo, diz, asc, txt, ans support
+- nfo, diz, asc, txt, ans, cia, ice, xb, pcb, bin, tnd, idf, adf support
 - ability to change font, font size, text and background color
 - ability to change selection and link color
 - ability to toggle font smoothing

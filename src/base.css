@@ -2,3 +2,6 @@
   margin: 0;
 }
 
+*, *::after, *::before {
+    -webkit-user-drag: none;
+}

@@ -13,5 +13,6 @@ document.addEventListener('drop', (e) => {
 document.addEventListener('dragover', (e) => {
     e.preventDefault()
     e.stopPropagation()
-    e.dataTransfer.dropEffect = 'copy'
+    const isFile = e.dataTransfer.types[0] === 'Files'
+    e.dataTransfer.dropEffect = isFile ? 'copy' : 'none'
 })

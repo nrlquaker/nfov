@@ -1,7 +1,17 @@
 import { extname } from 'path'
 
 export const supportedTextFiles = ['.nfo', '.diz', '.asc', '.txt']
-export const supportedBinFiles = ['.ans']
+export const supportedBinFiles = [
+    '.ans',
+    '.cia',
+    '.ice',
+    '.xb',
+    '.pcb',
+    '.bin',
+    '.tnd',
+    '.idf',
+    '.adf'
+]
 export const supportedFiles = supportedTextFiles.concat(supportedBinFiles)
 
 export enum FileType {

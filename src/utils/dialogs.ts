@@ -1,4 +1,4 @@
-import { app, BrowserWindow, dialog } from 'electron'
+import { BrowserWindow, dialog } from 'electron'
 import { basename } from 'path'
 import { supportedFiles } from '../ui/settings/supported-files'
 
@@ -24,7 +24,7 @@ export function showExportDialog(mainWindow: BrowserWindow,
         dialog.showSaveDialog(
             mainWindow!,
             {
-                defaultPath: `${app.getPath('downloads')}/${basename(fileName)}.png`
+                defaultPath: `${basename(fileName)}.png`
             },
             (selectedFileName: string) => {
                 if (!selectedFileName) return
@@ -34,10 +34,10 @@ export function showExportDialog(mainWindow: BrowserWindow,
     })
 }
 
-function removeDotFromExtensions(extt: string[]): string[] {
-    const res: string[] = []
-    extt.forEach((element) => {
-        res.push(element.substring(1))
+function removeDotFromExtensions(extension: string[]): string[] {
+    const result: string[] = []
+    extension.forEach((element) => {
+        result.push(element.substring(1))
     })
-    return res
+    return result
 }

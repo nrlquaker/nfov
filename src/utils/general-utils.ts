@@ -1,7 +1,7 @@
 import * as toBuffer from 'blob-to-buffer'
 // @ts-ignore: no type definitions
 import * as domtoimage from 'dom-to-image'
-import { remote, shell } from 'electron'
+import { MenuItem, remote, shell } from 'electron'
 import * as fs from 'fs'
 
 export function saveImage(fileName: string): Promise<string> {
@@ -26,7 +26,15 @@ export function openLinksInExternalBrowser(): void {
 }
 
 export function setFileMenuItemsEnable(enable: boolean): void {
+    getMenuItem('Export to png...')!.enabled = enable
+    getMenuItem('Close')!.enabled = enable
+}
+
+function getMenuItem(label: string): MenuItem | null {
     const menu = remote.Menu.getApplicationMenu()
-    menu!.items[1].submenu!.items[1].enabled = enable
-    menu!.items[1].submenu!.items[2].enabled = enable
+    for (const item of menu!.items) {
+        const menuItem = item!.submenu!.items.find((i) => i.label === label)
+        if (menuItem) return menuItem
+    }
+    return null
 }

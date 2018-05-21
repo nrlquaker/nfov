@@ -1,6 +1,6 @@
 import { Rectangle, screen } from 'electron'
 
-export function calculateWindowPositionFor(width: number, height: number): Rectangle {
+export function getWindowBoundsCentered(width: number, height: number): Rectangle {
     const screenWidth = screen.getPrimaryDisplay().workAreaSize.width
     const screenHeight = screen.getPrimaryDisplay().workAreaSize.height
     const w = width > screenWidth ? screenWidth : width

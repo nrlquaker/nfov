@@ -5,7 +5,7 @@ import './compile/bypass-checker'
 import { getBgColor, getWindowCentering } from './fs/storage'
 import buildMenu from './ui/menu/build-menu'
 import { showExportDialog, showOpenDialog } from './utils/dialogs'
-import { calculateWindowPositionFor } from './utils/screen-utils'
+import { getWindowBoundsCentered } from './utils/screen-utils'
 
 const isDevMode = process.execPath.match(/[\\/]electron/)
 let mainWindow: Electron.BrowserWindow | null = null
@@ -136,7 +136,7 @@ ipcMain.on('close-file', () => {
 })
 
 ipcMain.on('window-size-changed', (_: any, width: number, height: number) => {
-    const rect = calculateWindowPositionFor(width, height)
+    const rect = getWindowBoundsCentered(width, height)
     mainWindow!.setContentSize(rect.width, rect.height, true)
     if (getWindowCentering()) {
         mainWindow!.setPosition(rect.x, rect.y, true)

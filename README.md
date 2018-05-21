@@ -49,12 +49,24 @@ npm run make
 
 ## Similar apps
 
-- [Ascension](https://github.com/ansilove/Ascension)
+### Editors
+
 - [PabloDraw](http://picoe.ca/products/pablodraw)
+
+### Viewers
+
+- [Ascension](https://github.com/ansilove/Ascension)
 - [NFOViewer](http://blockart.sourceforge.net)
+
+### Terminal viewers
+
+- [ansiterm](https://github.com/jcs/ansiterm)
+- [termNFO](https://github.com/phracker/termNFO)
+
+### QuickLook plugins
+
 - [QLAnsilove](https://github.com/ansilove/QLAnsilove)
 - [QuickNFO](https://github.com/planbnet/QuickNFO)
-- [termNFO](https://github.com/phracker/termNFO)
 
 ## License
 

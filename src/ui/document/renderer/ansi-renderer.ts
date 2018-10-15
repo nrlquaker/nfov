@@ -8,7 +8,7 @@ export default class AnsiRenderer implements DocumentRenderer {
         this.ansiContainer.innerHTML = ''
         const isRetina = window.devicePixelRatio > 1
         // @ts-ignore: loaded in html
-        AnsiLove.splitRender(filePath, (canvases: HTMLCanvasElement[], _: any) => {
+        AnsiLove.splitRender(escape(filePath), (canvases: HTMLCanvasElement[], _: any) => {
             this.ansiContainer.style.width = canvases[0].style.width
             canvases.forEach((canvas: HTMLCanvasElement) => {
                 canvas.style.verticalAlign = 'bottom'

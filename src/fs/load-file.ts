@@ -8,6 +8,7 @@ export default function loadFile(filePath: string): string {
     if (isSaucePresent(filePath)) {
         data = removeSauce(data)
     }
+    data = removeEOFCharacter(data)
     return data.replaceAll('<', '&lt') // escape tags
 }
 
@@ -25,5 +26,9 @@ function isSaucePresent(filePath: string): boolean {
 }
 
 function removeSauce(data: string): string {
-    return data.substring(0, data.length - 128 - 1) // exclude EOF character
+    return data.substring(0, data.length - 128)
+}
+
+function removeEOFCharacter(data: string): string {
+    return data.substring(0, data.length - 1)
 }

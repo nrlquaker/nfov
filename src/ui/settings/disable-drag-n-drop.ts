@@ -5,5 +5,5 @@ document.addEventListener('drop', (e) => {
 document.addEventListener('dragover', (e) => {
     e.preventDefault()
     e.stopPropagation()
-    e.dataTransfer.dropEffect = 'none'
+    e.dataTransfer!.dropEffect = 'none'
 })

@@ -17,7 +17,7 @@ export default class Doc {
     }
 
     public open(filePath: string): void {
-        this.setTitle(`${basename(filePath)} - ${this.appName}`)
+        this.setTitle(basename(filePath))
         const extension = extname(filePath).toLowerCase()
         this.documentMode.setModeFor(extension)
         const renderer = createRendererFor(extension)

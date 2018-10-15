@@ -6,6 +6,8 @@ export default class AnsiRenderer implements DocumentRenderer {
 
     public render(filePath: string): void {
         this.ansiContainer.innerHTML = ''
+        // needed because sometimes scroll is not reseted
+        this.ansiContainer.scrollIntoView()
         const isRetina = window.devicePixelRatio > 1
         // @ts-ignore: loaded in html
         AnsiLove.splitRender(escape(filePath), (canvases: HTMLCanvasElement[], _: any) => {

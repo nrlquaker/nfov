@@ -1,6 +1,6 @@
 import anchorme from 'anchorme'
 import { ipcRenderer } from 'electron'
-import loadFile from '../../../fs/load-file'
+import AsciiFileLoader from '../../../fs/ascii-file-loader'
 import * as storage from '../../../fs/storage'
 import { openLinksInExternalBrowser } from '../../../utils/general-utils'
 import anchormeOptions from '../anchorme-options'
@@ -9,6 +9,7 @@ import DocumentRenderer from './document-renderer'
 
 export default class AsciiRenderer implements DocumentRenderer {
     private asciiContainer = document.getElementById('ascii_container')!
+    private fileLoader = new AsciiFileLoader()
 
     public render(filePath: string): void {
         this.setText(this.loadText(filePath))
@@ -27,7 +28,7 @@ export default class AsciiRenderer implements DocumentRenderer {
     }
 
     private loadText(filePath: string): string {
-        let text = loadFile(filePath)
+        let text = this.fileLoader.load(filePath)
         if (storage.getLinksHighlighting()) {
             text = anchorme(text, anchormeOptions)
         }

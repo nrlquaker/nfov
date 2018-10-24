@@ -99,6 +99,7 @@
         "react-desktop": "^0.3.7",
         "react-dom": "^16.5.2",
         "react-hot-loader": "^4.3.11",
+        "sauce.js": "^1.0.1",
         "tslib": "^1.9.1"
     },
     "devDependencies": {

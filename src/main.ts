@@ -145,5 +145,8 @@ ipcMain.on('window-size-changed', (_: any, width: number, height: number) => {
 
 function openFile(filePath: string): void {
     lastOpenedFile = filePath
+    if (mainWindow!.isMaximized) {
+        mainWindow!.restore()
+    }
     mainWindow!.webContents.send('open-file', filePath)
 }

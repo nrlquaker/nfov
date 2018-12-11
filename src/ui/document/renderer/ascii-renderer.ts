@@ -22,9 +22,8 @@ export default class AsciiRenderer implements DocumentRenderer {
         )
     }
 
-    // Trim trailing spaces before newlines
     private setText(text: string): void {
-        this.asciiContainer.innerHTML = text.replace(/[^\S\r\n]+$/gm, '')
+        this.asciiContainer.innerHTML = text
     }
 
     private loadText(filePath: string): string {

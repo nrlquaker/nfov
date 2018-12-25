@@ -94,20 +94,20 @@
         "fs": "0.0.1-security",
         "iconv-lite": "^0.4.24",
         "path": "^0.12.7",
-        "react": "^16.6.3",
-        "react-color": "^2.14.1",
+        "react": "^16.7.0",
+        "react-color": "^2.17.0",
         "react-desktop": "^0.3.7",
-        "react-dom": "^16.6.3",
-        "react-hot-loader": "^4.3.12",
-        "sauce.js": "^1.0.1",
+        "react-dom": "^16.7.0",
+        "react-hot-loader": "^4.6.3",
+        "sauce.js": "^1.0.2",
         "tslib": "^1.9.1"
     },
     "devDependencies": {
         "@types/blob-to-buffer": "^1.2.0",
         "@types/electron-devtools-installer": "^2.2.0",
         "@types/electron-settings": "^3.1.1",
-        "@types/react": "^16.7.13",
-        "@types/react-color": "^2.13.6",
+        "@types/react": "^16.7.18",
+        "@types/react-color": "^2.14.0",
         "@types/react-dom": "^16.0.11",
         "@types/reactcss": "^1.2.3",
         "electron": "^1.8.4",
@@ -115,7 +115,7 @@
         "electron-prebuilt-compile": "1.8.4",
         "markdownlint-cli": "^0.13.0",
         "prettier": "^1.15.3",
-        "tslint": "^5.11.0",
+        "tslint": "^5.12.0",
         "typescript": "^3.2.2"
     }
 }

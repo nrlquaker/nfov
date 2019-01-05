@@ -11,6 +11,7 @@ export default class App extends React.Component {
                 <pre id='ascii_container' style={this.preStyle}></pre>
                 <div id='ansi_container'></div>
                 <canvas id='pcx_container'></canvas>
+                <div id='image_container'></div>
             </>
         )
     }

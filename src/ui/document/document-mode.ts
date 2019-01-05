@@ -4,13 +4,16 @@ import { detectFileType, FileType } from '../settings/supported-files'
 import AnsiContainer from './containers/ansi-container'
 import AsciiContainer from './containers/ascii-container'
 import Container from './containers/container'
+import ImageContainer from './containers/image-container'
 import PcxContainer from './containers/pcx-container'
 
 export default class DocumentMode {
+    // TODO check if posible using only 2 containers
     private containers = new Map<string, Container>([
         ['ascii', new AsciiContainer()],
         ['ansi', new AnsiContainer()],
-        ['pcx', new PcxContainer()]
+        ['pcx', new PcxContainer()],
+        ['image', new ImageContainer()]
     ])
     private currentContainer!: Container
 
@@ -27,8 +30,9 @@ export default class DocumentMode {
             case FileType.Ansi:
                 this.setMode('ansi')
                 break
-            default:
-                this.setMode('pcx')
+            case FileType.Image:
+                extension.toLowerCase().endsWith('pcx') ?
+                    this.setMode('pcx') : this.setMode('image')
         }
     }
 

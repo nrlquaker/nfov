@@ -3,7 +3,7 @@ import { getLinkColor } from '../../fs/storage'
 import { openLinksInExternalBrowser } from '../../utils/general-utils'
 import anchormeOptions from './anchorme-options'
 
-const asciiContainer = document.getElementById('ascii_container')
+const asciiContainer = document.getElementById('text_container')
 const styleSheet = document.styleSheets[0] as CSSStyleSheet
 const selectionRuleIndex = 0
 const fontSmoothingRuleIndex = 1

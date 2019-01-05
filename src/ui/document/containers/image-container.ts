@@ -1,18 +1,19 @@
 import AsciiAwareContainer from './ascii-aware-container'
 
 export default class ImageContainer extends AsciiAwareContainer {
-    private ansiContainer = document.getElementById('image_container')!
+    private container = document.getElementById('image_container')!
 
     public show(): void {
         super.show()
-        this.ansiContainer.style.display = 'block'
+        this.container.style.display = 'block'
     }
 
     public hide(): void {
-        this.ansiContainer.style.display = 'none'
+        this.container.style.display = 'none'
     }
 
     public clear(): void {
-        this.ansiContainer.innerHTML = ''
+        this.container.innerHTML = ''
+        this.container.style.width = '0'
     }
 }

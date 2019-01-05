@@ -8,22 +8,22 @@ import { setLinkColor } from '../ascii-document-style'
 import DocumentRenderer from './document-renderer'
 
 export default class AsciiRenderer implements DocumentRenderer {
-    private asciiContainer = document.getElementById('ascii_container')!
+    private container = document.getElementById('text_container')!
     private fileLoader = new AsciiFileLoader()
 
     public render(filePath: string): void {
         this.setText(this.loadText(filePath))
         this.updateLinksHighlighting()
-        this.asciiContainer.scrollIntoView()
+        this.container.scrollIntoView()
         ipcRenderer.send(
             'window-size-changed',
-            this.asciiContainer.scrollWidth,
-            this.asciiContainer.clientHeight
+            this.container.scrollWidth,
+            this.container.clientHeight
         )
     }
 
     private setText(text: string): void {
-        this.asciiContainer.innerHTML = text
+        this.container.innerHTML = text
     }
 
     private loadText(filePath: string): string {

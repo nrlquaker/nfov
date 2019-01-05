@@ -6,6 +6,7 @@ export default class AnsiRenderer implements DocumentRenderer {
 
     public render(filePath: string): void {
         this.ansiContainer.innerHTML = ''
+        // TODO check if needed now
         // needed because sometimes scroll is not reseted
         this.ansiContainer.scrollIntoView()
         const isRetina = window.devicePixelRatio > 1

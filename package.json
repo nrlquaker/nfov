@@ -87,7 +87,7 @@
     "dependencies": {
         "anchorme": "^1.1.2",
         "blob-to-buffer": "^1.2.7",
-        "dom-to-image": "https://github.com/nrlquaker/dom-to-image/archive/2.6.1.tar.gz",
+        "dom-to-image": "^2.6.0",
         "electron-compile": "^6.4.2",
         "electron-devtools-installer": "^2.2.4",
         "electron-settings": "^3.2.0",

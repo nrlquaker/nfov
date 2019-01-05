@@ -62,7 +62,7 @@
 				<key>CFBundleTypeRole</key>
 				<string>Viewer</string>
 				<key>LSHandlerRank</key>
-				<string>Default</string>
+				<string>Alternate</string>
 			</dict>
             <dict>
 				<key>CFBundleTypeExtensions</key>
@@ -198,6 +198,73 @@
 				<string>Viewer</string>
 				<key>LSHandlerRank</key>
 				<string>Default</string>
+			</dict>
+            <dict>
+				<key>CFBundleTypeExtensions</key>
+				<array>
+					<string>pcx</string>
+					<string>PCX</string>
+				</array>
+				<key>CFBundleTypeIconFile</key>
+				<string>file_pcx.icns</string>
+				<key>CFBundleTypeName</key>
+				<string>PiCture eXchange Image File</string>
+				<key>CFBundleTypeRole</key>
+				<string>Viewer</string>
+				<key>LSHandlerRank</key>
+				<string>Alternate</string>
+			</dict>
+            <dict>
+				<key>CFBundleTypeExtensions</key>
+				<array>
+					<string>bmp</string>
+					<string>BMP</string>
+				</array>
+				<key>CFBundleTypeName</key>
+				<string>Bitmap Image File</string>
+				<key>CFBundleTypeRole</key>
+				<string>Viewer</string>
+				<key>LSHandlerRank</key>
+				<string>Alternate</string>
+			</dict>
+            <dict>
+				<key>CFBundleTypeExtensions</key>
+				<array>
+					<string>gif</string>
+					<string>GIF</string>
+				</array>
+				<key>CFBundleTypeName</key>
+				<string>Graphics Interchange Format Image File</string>
+				<key>CFBundleTypeRole</key>
+				<string>Viewer</string>
+				<key>LSHandlerRank</key>
+				<string>Alternate</string>
+			</dict>
+            <dict>
+				<key>CFBundleTypeExtensions</key>
+				<array>
+					<string>jpg</string>
+					<string>JPG</string>
+				</array>
+				<key>CFBundleTypeName</key>
+				<string>JPEG Image File</string>
+				<key>CFBundleTypeRole</key>
+				<string>Viewer</string>
+				<key>LSHandlerRank</key>
+				<string>Alternate</string>
+			</dict>
+            <dict>
+				<key>CFBundleTypeExtensions</key>
+				<array>
+					<string>png</string>
+					<string>PNG</string>
+				</array>
+				<key>CFBundleTypeName</key>
+				<string>Portable Network Graphics Image File</string>
+				<key>CFBundleTypeRole</key>
+				<string>Viewer</string>
+				<key>LSHandlerRank</key>
+				<string>Alternate</string>
 			</dict>
 		</array>
 	</dict>

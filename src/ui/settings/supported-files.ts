@@ -12,11 +12,17 @@ export const supportedBinFiles = [
     '.idf',
     '.adf'
 ]
-export const supportedFiles = supportedTextFiles.concat(supportedBinFiles)
+export const supportedImageFiles = ['.pcx']
+export const supportedFiles = [
+    ...supportedTextFiles,
+    ...supportedBinFiles,
+    ...supportedImageFiles
+]
 
 export enum FileType {
-    ANSI,
-    ASCII
+    Ansi,
+    Ascii,
+    Pcx
 }
 
 export function isFileSupported(fileName: string): boolean {
@@ -26,8 +32,10 @@ export function isFileSupported(fileName: string): boolean {
 
 export function detectFileType(extension: string): FileType {
     if (supportedTextFiles.includes(extension)) {
-        return FileType.ASCII
+        return FileType.Ascii
+    } else if (supportedBinFiles.includes(extension)) {
+        return FileType.Ansi
     } else {
-        return FileType.ANSI
+        return FileType.Pcx
     }
 }

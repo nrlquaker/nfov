@@ -1,38 +1,51 @@
 import { ipcRenderer } from 'electron'
 import * as storage from '../../fs/storage'
 import { detectFileType, FileType } from '../settings/supported-files'
-import { setBgColor } from './ascii-document-style'
+import AnsiContainer from './containers/ansi-container'
+import AsciiContainer from './containers/ascii-container'
+import Container from './containers/container'
+import PcxContainer from './containers/pcx-container'
 
 export default class DocumentMode {
-    private asciiContainer = document.getElementById('ascii_container')!
-    private ansiContainer = document.getElementById('ansi_container')!
+    private containers = new Map<string, Container>([
+        ['ascii', new AsciiContainer()],
+        ['ansi', new AnsiContainer()],
+        ['pcx', new PcxContainer()]
+    ])
+    private currentContainer!: Container
 
     constructor() {
-        this.setAsciMode()
+        this.setMode('ascii')
         this.updateColors()
     }
 
     public setModeFor(extension: string): void {
         switch (detectFileType(extension)) {
-            case FileType.ASCII:
-                this.setAsciMode()
+            case FileType.Ascii:
+                this.setMode('ascii')
                 break
-            case FileType.ANSI:
-                this.setAnsiMode()
+            case FileType.Ansi:
+                this.setMode('ansi')
                 break
+            default:
+                this.setMode('pcx')
         }
     }
 
-    private setAnsiMode(): void {
-        setBgColor('#000000')
-        this.asciiContainer.style.display = 'none'
-        this.ansiContainer.style.display = 'block'
+    public resetMode(): void {
+        this.containers.forEach((container, _) => container.clear())
     }
 
-    private setAsciMode(): void {
-        setBgColor(storage.getBgColor())
-        this.ansiContainer.style.display = 'none'
-        this.asciiContainer.style.display = 'inline-block'
+    private setMode(mode: string): void {
+        this.currentContainer = this.containers.get(mode)!
+        this.containers.forEach((container, _) => {
+            if (container !== this.currentContainer) {
+                container.hide()
+                container.clear()
+            } else {
+                container.show()
+            }
+        })
     }
 
     private updateColors(): void {

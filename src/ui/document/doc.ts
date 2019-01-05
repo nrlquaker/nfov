@@ -5,14 +5,10 @@ import createRendererFor from './renderer/renderer-factory'
 
 export default class Doc {
     private appName: string
-    private asciiContainer: HTMLElement
-    private ansiContainer: HTMLElement
     private documentMode: DocumentMode
 
     constructor(appName: string) {
         this.appName = appName
-        this.asciiContainer = document.getElementById('ascii_container')!
-        this.ansiContainer = document.getElementById('ansi_container')!
         this.documentMode = new DocumentMode()
     }
 
@@ -26,8 +22,7 @@ export default class Doc {
     }
 
     public close(): void {
-        this.ansiContainer.innerHTML = ''
-        this.asciiContainer.innerHTML = ''
+        this.documentMode.resetMode()
         this.setTitle(this.appName)
         setFileMenuItemsEnable(false)
     }

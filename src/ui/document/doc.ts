@@ -5,11 +5,10 @@ import createRendererFor from './renderer/renderer-factory'
 
 export default class Doc {
     private appName: string
-    private documentMode: DocumentMode
+    private documentMode = new DocumentMode()
 
     constructor(appName: string) {
         this.appName = appName
-        this.documentMode = new DocumentMode()
     }
 
     public open(filePath: string): void {

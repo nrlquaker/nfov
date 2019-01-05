@@ -5,13 +5,15 @@ export default class App extends React.Component {
         padding: '1em'
     }
 
+    private divStyle = {
+        verticalAlign: 'bottom'
+    }
+
     public render(): JSX.Element {
         return (
             <>
-                <pre id='ascii_container' style={this.preStyle}></pre>
-                <div id='ansi_container'></div>
-                <canvas id='pcx_container'></canvas>
-                <div id='image_container'></div>
+                <pre id='text_container' style={this.preStyle}></pre>
+                <div id='image_container' style={this.divStyle}></div>
             </>
         )
     }

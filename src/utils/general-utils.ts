@@ -25,16 +25,11 @@ export function openLinksInExternalBrowser(): void {
     }
 }
 
-export function setFileMenuItemsEnable(enable: boolean): void {
-    getMenuItem('Export to png...')!.enabled = enable
-    getMenuItem('Close')!.enabled = enable
-}
-
-function getMenuItem(label: string): MenuItem | null {
+export function getMenuItem(label: string): MenuItem {
     const menu = remote.Menu.getApplicationMenu()
     for (const item of menu!.items) {
         const menuItem = item!.submenu!.items.find((i) => i.label === label)
         if (menuItem) return menuItem
     }
-    return null
+    throw new Error(`Menu item with label '${label}' is not found`)
 }

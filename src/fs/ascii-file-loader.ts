@@ -2,6 +2,7 @@ import * as fs from 'fs'
 import { decode } from 'iconv-lite'
 import { Sauce, SauceParser } from 'sauce.js'
 import '../extensions/string'
+import ControlCharactersRemaper from './control-characters-remapper'
 
 export default class AsciiFileLoader {
     private readonly sauceSize = 128
@@ -12,6 +13,7 @@ export default class AsciiFileLoader {
         let data = this.loadFile(filePath)
         data = this.removeSauceIfNeeded(data, filePath)
         data = this.removeEOFCharacter(data)
+        data = new ControlCharactersRemaper().remap(data)
         return data.replaceAll('<', '&lt') // escape tags
     }
 

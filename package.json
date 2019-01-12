@@ -16,7 +16,7 @@
         "package": "electron-forge package",
         "make": "electron-forge make",
         "publish": "electron-forge publish",
-        "lint": "tslint --project tsconfig.json --type-check; markdownlint README.md"
+        "lint": "tslint --project tsconfig.json; markdownlint README.md"
     },
     "keywords": [
         "nfo",
@@ -117,7 +117,7 @@
         "electron-prebuilt-compile": "1.8.4",
         "markdownlint-cli": "^0.13.0",
         "prettier": "^1.15.3",
-        "tslint": "^5.12.0",
+        "tslint": "^5.12.1",
         "typescript": "^3.2.2"
     }
 }

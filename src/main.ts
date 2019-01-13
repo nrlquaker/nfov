@@ -30,9 +30,7 @@ async function createMainWindow(): Promise<void> {
         await installExtension(REACT_DEVELOPER_TOOLS)
         mainWindow.webContents.openDevTools()
     }
-    mainWindow.on('ready-to-show', () => {
-        mainWindow!.show()
-    })
+    mainWindow.on('ready-to-show', () => mainWindow!.show())
     mainWindow.on('close', () => {
         mainWindow = null
         preferencesWindow = null
@@ -59,17 +57,13 @@ function createPreferencesWindow(): void {
     })
 }
 
-ipcMain.on('open-preferences', () => {
-    preferencesWindow!.show()
-})
+ipcMain.on('open-preferences', () => preferencesWindow!.show())
 
 app.on('ready', () => {
     Menu.setApplicationMenu(buildMenu(!!isDevMode))
     createMainWindow()
     createPreferencesWindow()
-    app.on('open-file', (_, filePath) => {
-        openFile(filePath)
-    })
+    app.on('open-file', (_, filePath) => openFile(filePath))
 })
 
 app.on('will-finish-launching', () => {
@@ -117,9 +111,9 @@ ipcMain.on('links-highlighting-changed', (_: any, enabled: boolean) => {
     mainWindow!.webContents.send('links-highlighting-changed', enabled)
 })
 
-ipcMain.on('open-file', (_: any, filePath: string) => {
-    openFile(filePath)
-})
+ipcMain.on('open-file', (_: any, filePath: string) => openFile(filePath))
+
+ipcMain.on('close-file', () => mainWindow!.webContents.send('close-file'))
 
 ipcMain.on('show-open-dialog', () => {
     showOpenDialog(mainWindow!).then((fileName) => openFile(fileName))
@@ -129,10 +123,6 @@ ipcMain.on('show-export-dialog', () => {
     showExportDialog(mainWindow!, lastOpenedFile).then((fileName) => {
         mainWindow!.webContents.send('export-to-png', fileName)
     })
-})
-
-ipcMain.on('close-file', () => {
-    mainWindow!.webContents.send('close-file')
 })
 
 ipcMain.on('window-size-changed', (_: any, width: number, height: number) => {

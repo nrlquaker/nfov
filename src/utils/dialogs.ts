@@ -34,10 +34,6 @@ export function showExportDialog(mainWindow: BrowserWindow,
     })
 }
 
-function removeDotFromExtensions(extension: string[]): string[] {
-    const result: string[] = []
-    extension.forEach((element) => {
-        result.push(element.substring(1))
-    })
-    return result
+function removeDotFromExtensions(extensions: string[]): string[] {
+    return extensions.map((ext) => ext.substring(1))
 }

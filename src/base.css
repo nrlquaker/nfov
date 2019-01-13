@@ -3,5 +3,5 @@
 }
 
 *, *::after, *::before {
-    -webkit-user-drag: none;
+  -webkit-user-drag: none;
 }

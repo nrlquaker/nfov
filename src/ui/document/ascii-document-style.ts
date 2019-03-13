@@ -3,7 +3,7 @@ import { getLinkColor } from '../../fs/storage'
 import { openLinksInExternalBrowser } from '../../utils/general-utils'
 import anchormeOptions from './anchorme-options'
 
-const asciiContainer = document.getElementById('text_container')
+const asciiContainer = document.getElementById('text_container')!
 const styleSheet = document.styleSheets[0] as CSSStyleSheet
 const selectionRuleIndex = 0
 const fontSmoothingRuleIndex = 1
@@ -11,12 +11,12 @@ const fontSmoothingRuleIndex = 1
 insertEmptyRules()
 
 export function setTextColor(textColor: string): void {
-    asciiContainer!.style.color = textColor
+    asciiContainer.style.color = textColor
 }
 
 export function setBgColor(backgroundColor: string): void {
     document.body.style.backgroundColor = backgroundColor
-    asciiContainer!.style.backgroundColor = backgroundColor
+    asciiContainer.style.backgroundColor = backgroundColor
 }
 
 export function setLinkColor(linkColor: string): void {
@@ -32,11 +32,11 @@ export function setSelectionColor(selectionColor: string): void {
 }
 
 export function setFont(fontName: string): void {
-    asciiContainer!.style.fontFamily = `"${fontName}"`
+    asciiContainer.style.fontFamily = `"${fontName}"`
 }
 
 export function setFontSize(fontSize: string): void {
-    asciiContainer!.style.fontSize = `${fontSize}px`
+    asciiContainer.style.fontSize = `${fontSize}px`
 }
 
 export function enableFontSmoothing(enabled: boolean): void {
@@ -55,7 +55,7 @@ function insertEmptyRules(): void {
 }
 
 function highlightLinks(): void {
-    asciiContainer!.innerHTML = anchorme(asciiContainer!.innerHTML, anchormeOptions)
+    asciiContainer.innerHTML = anchorme(asciiContainer.innerHTML, anchormeOptions)
     setLinkColor(getLinkColor())
     openLinksInExternalBrowser()
 }

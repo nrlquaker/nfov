@@ -5,6 +5,7 @@ export const supportedBinFiles = [
     '.ans',
     '.cia',
     '.ice',
+    '.mem',
     '.xb',
     '.pcb',
     '.bin',

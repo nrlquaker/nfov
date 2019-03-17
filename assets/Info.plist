@@ -112,6 +112,21 @@
             <dict>
 				<key>CFBundleTypeExtensions</key>
 				<array>
+					<string>mem</string>
+					<string>MEM</string>
+				</array>
+				<key>CFBundleTypeIconFile</key>
+				<string>file_mem.icns</string>
+				<key>CFBundleTypeName</key>
+				<string>Membership in zipfile</string>
+				<key>CFBundleTypeRole</key>
+				<string>Viewer</string>
+				<key>LSHandlerRank</key>
+				<string>Default</string>
+			</dict>
+            <dict>
+				<key>CFBundleTypeExtensions</key>
+				<array>
 					<string>xb</string>
 					<string>XB</string>
 				</array>

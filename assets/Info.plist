@@ -112,6 +112,21 @@
             <dict>
 				<key>CFBundleTypeExtensions</key>
 				<array>
+					<string>lgo</string>
+					<string>LGO</string>
+				</array>
+				<key>CFBundleTypeIconFile</key>
+				<string>file_lgo.icns</string>
+				<key>CFBundleTypeName</key>
+				<string>ANSI Artwork</string>
+				<key>CFBundleTypeRole</key>
+				<string>Viewer</string>
+				<key>LSHandlerRank</key>
+				<string>Default</string>
+			</dict>
+            <dict>
+				<key>CFBundleTypeExtensions</key>
+				<array>
 					<string>mem</string>
 					<string>MEM</string>
 				</array>

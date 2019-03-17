@@ -142,6 +142,21 @@
             <dict>
 				<key>CFBundleTypeExtensions</key>
 				<array>
+					<string>sit</string>
+					<string>SIT</string>
+				</array>
+				<key>CFBundleTypeIconFile</key>
+				<string>file_sit.icns</string>
+				<key>CFBundleTypeName</key>
+				<string>Site listings</string>
+				<key>CFBundleTypeRole</key>
+				<string>Viewer</string>
+				<key>LSHandlerRank</key>
+				<string>Default</string>
+			</dict>
+            <dict>
+				<key>CFBundleTypeExtensions</key>
+				<array>
 					<string>xb</string>
 					<string>XB</string>
 				</array>

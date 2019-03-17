@@ -6,6 +6,7 @@ import '../extensions/string'
 export default class ControlCharactersRemaper {
     public remap(data: string): string {
         return data
+            // https://www.ascii-codes.com
             .replaceAll('\u0001', '\u263A') //   1 ☺
             .replaceAll('\u0002', '\u263B') //   2 ☻
             .replaceAll('\u0003', '\u2665') //   3 ♥

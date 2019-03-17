@@ -7,6 +7,7 @@ export const supportedBinFiles = [
     '.ice',
     '.lgo',
     '.mem',
+    '.sit',
     '.xb',
     '.pcb',
     '.bin',

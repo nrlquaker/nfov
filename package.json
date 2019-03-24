@@ -68,7 +68,10 @@
                     "assets/icons/file_tnd.icns",
                     "assets/icons/file_idf.icns",
                     "assets/icons/file_adf.icns",
-                    "assets/icons/file_pcx.icns"
+                    "assets/icons/file_pcx.icns",
+                    "assets/icons/file_mem.icns",
+                    "assets/icons/file_lgo.icns",
+                    "assets/icons/file_sit.icns"
                 ],
                 "ignore": [
                     ".vscode",

@@ -55,7 +55,7 @@ function insertEmptyRules(): void {
 }
 
 function highlightLinks(): void {
-    asciiContainer.innerHTML = anchorme(asciiContainer.innerHTML, anchormeOptions)
+    asciiContainer.innerHTML = anchorme({input:asciiContainer.innerHTML, options:anchormeOptions})
     setLinkColor(getLinkColor())
     openLinksInExternalBrowser()
 }

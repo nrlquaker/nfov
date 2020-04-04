@@ -1,12 +1,12 @@
 const extensionsToExclude = ['.audio', '.date', '.link', '.xxx', '.zip']
 
 const anchormeOptions = {
-    exclude: (URLObj: any) => {
-        const url = URLObj.raw.toLowerCase()
+    exclude: (url: string) => {
+        const urlLowerCase = url.toLowerCase()
         for (const extension of extensionsToExclude) {
-            if (url.endsWith(extension)) return true
+            if (urlLowerCase.endsWith(extension)) return true
         }
-        return false
+        return false;
     }
 }
 

@@ -113,7 +113,7 @@
         "@types/react-color": "^3.0.0",
         "@types/react-dom": "^16.8.4",
         "@types/reactcss": "^1.2.3",
-        "electron": "^1.8.4",
+        "electron": "^9.1.0",
         "electron-forge": "^5.2.4",
         "electron-prebuilt-compile": "1.8.4",
         "markdownlint-cli": "^0.15.0",

@@ -30,7 +30,7 @@ export default class AsciiRenderer implements DocumentRenderer {
     private loadText(filePath: string): string {
         let text = this.fileLoader.load(filePath)
         if (storage.getLinksHighlighting()) {
-            text = anchorme({input:text, options:anchormeOptions})
+            text = anchorme({input: text, options: anchormeOptions})
         }
         return text
     }

@@ -6,7 +6,7 @@ const anchormeOptions = {
         for (const extension of extensionsToExclude) {
             if (urlLowerCase.endsWith(extension)) return true
         }
-        return false;
+        return false
     }
 }
 

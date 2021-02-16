@@ -28,7 +28,7 @@ nfov is bundled with:
 Can be easily installed with [Homebrew Cask](https://caskroom.github.io):
 
 ```sh
-brew cask install nfov
+brew install nfov
 ```
 
 Alternatively, binaries are available in the [GitHub Releases](https://github.com/nrlquaker/nfov/releases)

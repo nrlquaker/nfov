@@ -77,7 +77,8 @@
                     ".vscode",
                     "assets/icons",
                     "assets/Info.plist",
-                    "screenshots"
+                    "screenshots",
+                    "icons"
                 ]
             },
             "github_repository": {
